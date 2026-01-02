@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "remora1",
-      "name": "Remora&trade; 1",
+      "name": "Remora 1",
       "description": "Double-sided speed controller board, pre-flashed with ESCape32. Works with motors from 2,000Kv to 22,500Kv+",
       "price_usd": 40,
       "price_eur": 35,
@@ -13,7 +13,7 @@
     },
     {
       "id": "remora1g",
-      "name": "Remora&trade; 1/g",
+      "name": "Remora 1/g",
       "description": "Single-sided Remora Genesis board for BSCRA brushless Genesis class. Drives 3,000Kv spec motors",
       "price_usd": 0,
       "price_eur": 0,
@@ -26,7 +26,7 @@
     },
     {
       "id": "remora2",
-      "name": "Remora&trade; 2",
+      "name": "Remora 2",
       "description": "Single-sided speed controller board, innovation of Remora 1 with updates from Remora g",
       "price_usd": 0,
       "price_eur": 0,
@@ -39,7 +39,7 @@
     {
       "id": "wifilink",
       "name": "WiFi Link",
-      "description": "Complete programmer for Remora&trade; 1 and 2. Fully flashed with 1.4 firmware. Includes adapter, cable, box, and clip",
+      "description": "Complete programmer for Remora 1 and 2. Fully flashed with 1.4 firmware. Includes adapter, cable, box, and clip",
       "price_usd": 38,
       "price_eur": 32,
       "price_gbp": 27.50,
@@ -50,7 +50,7 @@
     {
       "id": "wifilink_clamp",
       "name": "WiFi Link Clamp",
-      "description": "Replacement clamp for WiFi Link programmer. Safely alter a Remora&trade; while motor is attached",
+      "description": "Replacement clamp for WiFi Link programmer. Safely alter a Remora while motor is attached",
       "price_usd": 9,
       "price_eur": 7,
       "price_gbp": 5,
