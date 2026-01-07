@@ -445,19 +445,13 @@
         // Load requirements from CSV file
         async function loadRequirements() {
             try {
-                const response = await fetch('slot-car-ecom-requirements.csv');
-                if (!response.ok) {
-                    throw new Error('Failed to load CSV file');
-                }
-                const csvText = await response.text();
+                const csvText = await window.fs.readFile('slot-car-ecom-requirements.csv', { encoding: 'utf8' });
                 requirements = parseCSV(csvText);
                 
                 if (requirements.length > 0) {
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('main-content').style.display = 'block';
                     renderQuestion();
-                } else {
-                    throw new Error('No valid data found in CSV file');
                 }
             } catch (error) {
                 console.error('Error loading requirements:', error);

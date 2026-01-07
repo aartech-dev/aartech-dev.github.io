@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requirements Questionnaire</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -354,15 +355,6 @@
             font-size: 14px;
             color: #9ca3af;
         }
-
-        .loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            font-size: 18px;
-            color: #6b7280;
-        }
     </style>
 </head>
 <body>
@@ -372,52 +364,46 @@
             <p>Please indicate the importance of each requirement</p>
         </div>
         
-        <div class="loading" id="loading">
-            Loading questionnaire...
+        <div class="progress-bar">
+            <div class="progress-info">
+                <span id="progress-text">Question 1 of 0</span>
+                <span id="answered-text">0 answered</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
         </div>
         
-        <div style="display: none;" id="main-content">
-            <div class="progress-bar">
-                <div class="progress-info">
-                    <span id="progress-text">Question 1 of 0</span>
-                    <span id="answered-text">0 answered</span>
-                </div>
-                <div class="progress-track">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-            </div>
-            
-            <div class="content" id="question-content">
-                <div class="question-header">
-                    <span class="priority-badge" id="priority-badge"></span>
-                    <button class="info-button" id="info-button" style="display: none;">
-                        ℹ️ More Info
-                    </button>
-                </div>
-                <h2 class="question-title" id="question-title"></h2>
-                <p class="question-description" id="question-description"></p>
-                <div class="options-label">Select importance level:</div>
-                <div id="options-container"></div>
-            </div>
-            
-            <div class="thank-you" id="thank-you">
-                <div class="check-icon">✓</div>
-                <h2>Thank You!</h2>
-                <p id="completion-text"></p>
-                <button class="download-button" onclick="downloadResults()">
-                    <span>⬇</span> Download Your Responses
-                </button>
-                <p class="download-note">The file will be saved as a CSV that you can email or import into other applications.</p>
-            </div>
-            
-            <div class="navigation" id="navigation">
-                <button class="nav-button btn-prev" id="prev-button" onclick="previousQuestion()">
-                    ← Previous
-                </button>
-                <button class="nav-button btn-next" id="next-button" onclick="nextQuestion()">
-                    <span id="next-text">Next</span> →
+        <div class="content" id="question-content">
+            <div class="question-header">
+                <span class="priority-badge" id="priority-badge"></span>
+                <button class="info-button" id="info-button" style="display: none;">
+                    ℹ️ More Info
                 </button>
             </div>
+            <h2 class="question-title" id="question-title"></h2>
+            <p class="question-description" id="question-description"></p>
+            <div class="options-label">Select importance level:</div>
+            <div id="options-container"></div>
+        </div>
+        
+        <div class="thank-you" id="thank-you">
+            <div class="check-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p id="completion-text"></p>
+            <button class="download-button" onclick="downloadResults()">
+                <span>⬇</span> Download Your Responses
+            </button>
+            <p class="download-note">The file will be saved as a CSV that you can email or import into other applications.</p>
+        </div>
+        
+        <div class="navigation" id="navigation">
+            <button class="nav-button btn-prev" id="prev-button" onclick="previousQuestion()">
+                ← Previous
+            </button>
+            <button class="nav-button btn-next" id="next-button" onclick="nextQuestion()">
+                <span id="next-text">Next</span> →
+            </button>
         </div>
     </div>
     
@@ -442,66 +428,24 @@
             "Not Applicable"
         ];
         
-        // Load requirements from CSV file
+        // Load and parse CSV
         async function loadRequirements() {
             try {
-                const response = await fetch('slot-car-ecom-requirements.csv');
-                if (!response.ok) {
-                    throw new Error('Failed to load CSV file');
-                }
-                const csvText = await response.text();
-                requirements = parseCSV(csvText);
-                
-                if (requirements.length > 0) {
-                    document.getElementById('loading').style.display = 'none';
-                    document.getElementById('main-content').style.display = 'block';
-                    renderQuestion();
-                } else {
-                    throw new Error('No valid data found in CSV file');
-                }
-            } catch (error) {
-                console.error('Error loading requirements:', error);
-                document.getElementById('loading').textContent = 'Error loading file: ' + error.message;
-            }
-        }
-        
-        function parseCSV(csvText) {
-            const lines = csvText.split('\n').filter(line => line.trim());
-            if (lines.length < 2) return [];
-            
-            const headers = lines[0].split(',').map(h => h.trim());
-            const data = [];
-            
-            for (let i = 1; i < lines.length; i++) {
-                const line = lines[i];
-                const values = [];
-                let currentValue = '';
-                let insideQuotes = false;
-                
-                for (let j = 0; j < line.length; j++) {
-                    const char = line[j];
-                    
-                    if (char === '"') {
-                        insideQuotes = !insideQuotes;
-                    } else if (char === ',' && !insideQuotes) {
-                        values.push(currentValue.trim().replace(/^"|"$/g, ''));
-                        currentValue = '';
-                    } else {
-                        currentValue += char;
+                const csvData = await window.fs.readFile('slot-car-ecom-requirements.csv', { encoding: 'utf8' });
+                Papa.parse(csvData, {
+                    header: true,
+                    dynamicTyping: false,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        requirements = results.data.filter(row => row.Name && row.Name.trim());
+                        if (requirements.length > 0) {
+                            renderQuestion();
+                        }
                     }
-                }
-                values.push(currentValue.trim().replace(/^"|"$/g, ''));
-                
-                if (values.length >= 3 && values[1]) {
-                    const obj = {};
-                    headers.forEach((header, idx) => {
-                        obj[header] = values[idx] || '';
-                    });
-                    data.push(obj);
-                }
+                });
+            } catch (error) {
+                console.error('Error loading CSV:', error);
             }
-            
-            return data;
         }
         
         function renderQuestion() {
@@ -509,12 +453,12 @@
             
             const req = requirements[currentPage];
             
-            document.getElementById('question-title').textContent = req.Name || '';
-            document.getElementById('question-description').textContent = req.Description || '';
+            document.getElementById('question-title').textContent = req.Name;
+            document.getElementById('question-description').textContent = req.Description;
             
             const badge = document.getElementById('priority-badge');
-            badge.textContent = `Original Priority: ${req.Priority || 'N/A'}`;
-            badge.className = 'priority-badge priority-' + (req.Priority || 'low').toLowerCase();
+            badge.textContent = `Original Priority: ${req.Priority}`;
+            badge.className = 'priority-badge priority-' + req.Priority.toLowerCase();
             
             const infoButton = document.getElementById('info-button');
             if (req.comments && req.comments.trim()) {
@@ -591,21 +535,17 @@
         
         function downloadResults() {
             const results = requirements.map((req, index) => {
-                return [
-                    req.Priority || '',
-                    `"${(req.Name || '').replace(/"/g, '""')}"`,
-                    `"${(req.Description || '').replace(/"/g, '""')}"`,
-                    `"${(req.comments || '').replace(/"/g, '""')}"`,
-                    answers[index] || 'Not Answered'
-                ];
+                return {
+                    Priority: req.Priority,
+                    Requirement: req.Name,
+                    Description: req.Description,
+                    Comments: req.comments || '',
+                    'Your Response': answers[index] || 'Not Answered'
+                };
             });
             
-            const csvContent = [
-                ['Priority', 'Requirement', 'Description', 'Comments', 'Your Response'].join(','),
-                ...results.map(row => row.join(','))
-            ].join('\n');
-            
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const csv = Papa.unparse(results);
+            const blob = new Blob([csv], { type: 'text/csv' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -626,7 +566,6 @@
             document.getElementById('comment-modal').classList.remove('active');
         }
         
-        // Start the application
         loadRequirements();
     </script>
 </body>
