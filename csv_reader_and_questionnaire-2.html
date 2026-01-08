@@ -407,7 +407,7 @@
                 <button class="download-button" onclick="downloadResults()">
                     <span>⬇</span> Download Your Responses
                 </button>
-                <p class="download-note">The file will be saved as a CSV file that you can either: edit locally in a spreadsheet program and email to us. .</p>
+                <p class="download-note">The file will be saved as a CSV file that you can email to us.</p>
             </div>
             
             <div class="navigation" id="navigation">
@@ -435,11 +435,11 @@
         let answers = {};
         
         const importanceOptions = [
+            "Critical",
             "High",
             "Medium",
             "Low",
-            "Not Applicable",
-            "Do Not Know"
+            "Not Applicable"
         ];
         
         // Load requirements from CSV file
