@@ -543,105 +543,52 @@
         }
         
         function parseCSV(csvText) {
-            // Handle different line endings
-            const normalizedText = csvText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-            const result = [];
-            let headers = [];
-            let currentRow = [];
-            let currentField = '';
-            let insideQuotes = false;
-            let rowIndex = 0;
+            const lines = csvText.split('\n').filter(line => line.trim());
+            if (lines.length < 2) return [];
             
-            for (let i = 0; i < normalizedText.length; i++) {
-                const char = normalizedText[i];
-                const nextChar = normalizedText[i + 1];
+            const headers = parseCSVLine(lines[0]);
+            const data = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const values = parseCSVLine(lines[i]);
                 
-                if (char === '"') {
-                    if (insideQuotes && nextChar === '"') {
-                        // Escaped quote
-                        currentField += '"';
-                        i++;
-                    } else {
-                        // Toggle quote state
-                        insideQuotes = !insideQuotes;
-                    }
-                } else if (char === ',' && !insideQuotes) {
-                    // Field separator
-                    currentRow.push(currentField.trim());
-                    currentField = '';
-                } else if (char === '\n' && !insideQuotes) {
-                    // Row separator
-                    currentRow.push(currentField.trim());
-                    
-                    if (currentRow.some(field => field.length > 0)) {
-                        if (rowIndex === 0) {
-                            headers = currentRow;
-                        } else if (currentRow.length >= 2 && currentRow[1]) {
-                            const obj = {};
-                            headers.forEach((header, idx) => {
-                                obj[header] = currentRow[idx] || '';
-                            });
-                            result.push(obj);
-                        }
-                        rowIndex++;
-                    }
-                    
-                    currentRow = [];
-                    currentField = '';
-                } else {
-                    currentField += char;
-                }
-            }
-            
-            // Handle last row if file doesn't end with newline
-            if (currentField || currentRow.length > 0) {
-                currentRow.push(currentField.trim());
-                if (currentRow.length >= 2 && currentRow[1]) {
+                if (values.length >= 3 && values[1]) {
                     const obj = {};
                     headers.forEach((header, idx) => {
-                        obj[header] = currentRow[idx] || '';
+                        obj[header] = values[idx] || '';
                     });
-                    result.push(obj);
+                    data.push(obj);
                 }
             }
             
-            return result;
+            return data;
         }
         
         function parseCSVLine(line) {
-            // This function is now only used for display purposes
             const values = [];
             let currentValue = '';
             let insideQuotes = false;
-            let i = 0;
             
-            while (i < line.length) {
+            for (let i = 0; i < line.length; i++) {
                 const char = line[i];
+                const nextChar = line[i + 1];
                 
-                if (char === '"') {
-                    if (insideQuotes && line[i + 1] === '"') {
-                        currentValue += '"';
-                        i += 2;
-                        continue;
-                    } else {
-                        insideQuotes = !insideQuotes;
-                        i++;
-                        continue;
-                    }
-                }
-                
-                if (char === ',' && !insideQuotes) {
-                    values.push(currentValue);
+                if (char === '"' && nextChar === '"' && insideQuotes) {
+                    // Handle escaped quotes ("")
+                    currentValue += '"';
+                    i++; // Skip next quote
+                } else if (char === '"') {
+                    // Toggle quote state
+                    insideQuotes = !insideQuotes;
+                } else if (char === ',' && !insideQuotes) {
+                    // End of field
+                    values.push(currentValue.trim());
                     currentValue = '';
-                    i++;
-                    continue;
+                } else {
+                    currentValue += char;
                 }
-                
-                currentValue += char;
-                i++;
             }
-            
-            values.push(currentValue);
+            values.push(currentValue.trim());
             
             return values;
         }
