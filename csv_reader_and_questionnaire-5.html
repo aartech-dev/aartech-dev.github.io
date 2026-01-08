@@ -659,7 +659,7 @@
             badge.className = 'priority-badge priority-' + (req.Priority || 'low').toLowerCase();
             
             const infoButton = document.getElementById('info-button');
-            if (req.Comments && req.Comments.trim()) {
+            if (req.comments && req.comments.trim()) {
                 infoButton.style.display = 'flex';
             } else {
                 infoButton.style.display = 'none';
@@ -740,7 +740,7 @@
                     req.Priority || '',
                     `"${(req.Name || '').replace(/"/g, '""')}"`,
                     `"${(req.Description || '').replace(/"/g, '""')}"`,
-                    `"${(req.Comments || '').replace(/"/g, '""')}"`,
+                    `"${(req.comments || '').replace(/"/g, '""')}"`,
                     answers[index] || 'Not Answered'
                 ];
             });
@@ -751,7 +751,7 @@
                     custom.priority || '',
                     `"${(custom.name || '').replace(/"/g, '""')}"`,
                     `"${(custom.description || '').replace(/"/g, '""')}"`,
-                    `"${(custom.comments || '').replace(/"/g, '""')}"`,
+                    '',
                     'Custom Requirement'
                 ]);
             });
@@ -774,7 +774,7 @@
         
         document.getElementById('info-button').onclick = function() {
             const req = requirements[currentPage];
-            document.getElementById('modal-comment').textContent = req.Comments || '';
+            document.getElementById('modal-comment').textContent = req.comments || '';
             document.getElementById('comment-modal').classList.add('active');
         };
         
@@ -805,8 +805,6 @@
                 <input type="text" id="custom-name-${id}" placeholder="Enter requirement name">
                 <label>Description:</label>
                 <textarea id="custom-description-${id}" placeholder="Enter requirement description"></textarea>
-                <label>Comments (Optional):</label>
-                <textarea id="custom-comments-${id}" placeholder="Enter additional comments or clarifications"></textarea>
             `;
             container.appendChild(reqDiv);
             
@@ -829,14 +827,12 @@
                 const priority = document.getElementById(`custom-priority-${id}`)?.value || 'Medium';
                 const name = document.getElementById(`custom-name-${id}`)?.value || '';
                 const description = document.getElementById(`custom-description-${id}`)?.value || '';
-                const comments = document.getElementById(`custom-comments-${id}`)?.value || '';
                 
                 if (name.trim()) {
                     customRequirements.push({
                         priority: priority,
                         name: name,
-                        description: description,
-                        comments: comments
+                        description: description
                     });
                 }
             });
