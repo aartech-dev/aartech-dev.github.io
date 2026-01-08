@@ -1,13 +1,13 @@
 Priority,Name,Description,comments
-High,Reverse polarity protection,Shall be protected from reverse polarity. It shall only be possible to power the ESC with plus and minus connected to their designated pads on the board.,
-High,Reverse polarity protection response,"Shall provide reverse polarity protection in less than 2 ms, (the time it might take for a car to end up in a lane facing the wrong direction)",
-High,Startup/shutdown voltage,Shall start at  less than 1.2V and stay energized when running down to 1.18V.,
-High,Typical voltages,Shall be able to operate efficiently in the range 10 Vdc  to 12.6 Vdc – typical maximum track supply voltages for recreational play to competitive racing.,
-High,Maximum voltage,Shall be able to run with track supply voltages up to 16.4V and survive at 18V for short periods of time,
-,Startup ,"Shall control the power to the motor using pulse width modulation (pwm), with aspects of the rate and size of power provided to the motor set by firmware parameters.",See the ESCape32 configuration parameters.
-High,Linear operation,Shall be able to act linearly over its range of voltages so that say if the minimum activation voltage is 1.2V and the maximum track voltage is 12.4V the esc shall deliver 1.2V to 12.4V to the motor.,See the ESCape32 configuration parameters.
-,Normal operation,Shall be able to run without pwm once the motor is synchronized and started.,With pwm turned off (parameters duty_min and duty_max set to 100) then the output voltage will be the same as the input voltage less some small losses.
-High,Maximum rpm,"Shall be capable to commutating 6 magnet motors up to ~270,000 rpm and 12 magnet motors up to ~180,000 rpm.","For the speed controller to commutate a motor at high rpm it has to be able to commutate at a proportionally higher frequency. 
+High,Reverse polarity protection,Shall be protected if the eCom is connected back to front. It shall only be possible to power the ESC with plus and minus connected to their designated pads on the board.,
+High,Reverse polarity protection response,"Shall provide reverse polarity protection in less than 2 ms, (the time it might take for a car to end up in a lane facing the wrong direction).",
+Medium,Startup energization and shutdown de-energization voltages,Shall start at less than 1.2V and stay energized when running down to 1.18V.,
+High,Typical voltages,Shall be able to operate efficiently from the energization voltage up to 10 V(olts) to 12.4 V – typical maximum track supply voltage range for recreational play to competitive racing.,
+High,Maximum voltage,Shall be able to run with track supply voltages up to 16.4V and survive at 18V for short periods of time.,
+Low,Startup ,"Shall control the power to the motor using pulse width modulation (pwm), with aspects of the rate and size of power provided to the motor set by firmware parameters.",See the ESCape32 configuration parameters.
+High,Linear operation,Shall be able to act linearly over its range of voltages so that say if the minimum activation voltage is 1.2V and the maximum track voltage is 12.4V the eCom shall deliver 1.2V to 12.4V to the motor.,See the ESCape32 configuration parameters.
+High,Normal operation,Shall be able to run without pwm once the motor is synchronized and started so the applied voltage controls the motor speed directly.,With pwm turned off (parameters duty_min and duty_max set to 100) then the output voltage will be the same as the input voltage less some small losses.
+Medium,Maximum rpm,"Shall be capable to commutating 6 magnet motors up to ~270,000 rpm and 12 magnet motors up to ~180,000 rpm.","For the speed controller to commutate a motor at high rpm it has to be able to commutate at a proportionally higher frequency. 
 The  commutation frequency Fc = (rpm / 60) * pole-pairs
 Typical slot car motors have either 6 or 3 pole pairs (12 magnets or 6 magnets). The fastest motors running at up to 22,000Kv are 6 magnet motors. 
 For 6 pole pairs at 150000rpm ; Fc = (150000/60)*6,~ 15kHz
@@ -20,22 +20,30 @@ With a 12 magnet motor, it's 180000*12/2=1080 kERPM.
 High,Thermal performance,For compatibility with similar products specifically designed for slot-car use the sum of the maximum on-state resistances of the reverse polarity mosfet + the high-side mosfet + the low-side mosfet  shall be  ≤ 13mΩ ,"All N-ch mosfet output stage, with maximum on-state resistance of 4.2 mΩ each, therefore allowing 4.6mΩ for the reverse polarity mosfet"
 High,Motors,Shall be able to drive very low inductance and resistance motors.,"2µH to 20µH
 30mΩ to 300mΩ"
-High,Motor range,"Shall be able to run 1102/3/4/5/6/8 and 1203/4 motors in a range of Kv from say 2,000Kv – 22,000Kv",Tested a 1207.
+High,Low Kv Motors ,"Shall be able to run 1102/3/4/5/6/8 and 1203/4 motors in a range 3,000Kv to 4,800Kv",Tested a 1207.
+Medium,Medium Kv Motors,"Shall be able to run 1102/3/4/5/6/8 and 1203/4 motors in a range 4,800Kv to 7,000Kv",
+Low,High Kv Motors,"Shall be able to run 1102/3/4/5/6/8 and 1203/4 motors in a range 7,000Kv to 11,000Kv",
+Low,Very high Kv Motors,"Shall be able to run 1102/3/4/5/6/8 and 1203/4 motors >11,000Kv",
 High,Algorithm,Shall be able to run a 6-step algorithm.,
-High,Size,Shall be physically close to similar slot-car eCom size and be no larger than 25mm × 16mm × 4.5 – 5mm,Height is set in a range to account for different manufacturing possibilities and copper weights.
+High,Size,Shall be physically close to similar slot-car eCom’s size and be no larger than 25mm × 16mm × 4.5 – 5mm,Height is set in a range to account for different manufacturing possibilities and copper weights.
+Medium,Double sided board,Shall be a double sided board to minimize overall dimensions.,
+Medium,Single sided board,Shall be a single sided board.,
+High,Board outline,"Shall be a custom designed board outline, specifically designed to fit a specific chassis. (please provide this as a CAD file …)",
 Medium,Weight,Shall weigh less than 2.5gm,"May be possible to specify an overall board thickness <1.6mm, to save weight, but may cost more"
 High,Power up time,"The time from application of 12V to the input supply terminals to the motor outputs starting to switch shall preferably be less than 2ms, but not more than 4ms.",All power rails start quickly enough
 ,Startup,The startup synchronization phase should allow for PWM at 24kHz or 48kHz or 96kHz for about 100ms.,See the ESCape32 configuration parameters.
-High,Microcontroller choice,Shall preferably use the same STM32G071 mcu as some of the competitor eCom,"In order to drive a 18000Kv motor this requirement can not be met with a 64MHz mcu. The G071 MCU running at 64Mhz can get around 750*1.33=1M erpm, (RPM = ERPM/ pole pairs) With 12pole it’s 1000000/6=166kRPM. For ~1.2M ERPM (or 200kRPM), a faster MCU is needed. The AT32F421 is one of the candidates (however it has some startup delay). Better still would be STM32G43. 
+Low,STM32 Microcontroller,Shall use the same STM32G071 mcu as some of the competitor eCom.,"In order to drive a 18000Kv motor this requirement can not be met with a 64MHz mcu. The G071 MCU running at 64Mhz can get around 750*1.33=1M erpm, (RPM = ERPM/ pole pairs) With 12pole it’s 1000000/6=166kRPM. For ~1.2M ERPM (or 200kRPM), a faster MCU is needed. The AT32F421 is one of the candidates (however it has some startup delay). Better still would be STM32G43. 
 The AT32F421 is almost twice as fast as the G071. The STM32G431 is even faster than that running at 170Mhz."
+High,Artery Microcontroller,Shall use the same Artery F421 mcu as the Remora.,
 Low,Supply voltage sensing,Mcu shall have a way to sense the supply voltage.,
 High,Tunability,"Shall be able to fine tune the the ESC to achieve maximum motor performance and efficiency, either by feedback from the motor itself or direct input to the ESC.","Brushed DC slot-car motors have commutator advance, to improve their performance in one direction of rotation, it may well be that the brushless motors would also benefit from advance built into the firmware. This is a feature of the Escape32 firmware. Access via 4-way connector to allow access to mcu pins"
-High,Debug,Shall be possible to attach a debugger to the part (SWD pins),"Need to specify where the pads can be located, their size & spacing, without going to any extra expense the pads can  go down to 1mm diameter and connect to them using small pogo test pins in an accurately constructed programming jig.
+High,Debug,Shall be possible to attach a debugger to the part (SWD pins).,"Need to specify where the pads can be located, their size & spacing, without going to any extra expense the pads can  go down to 1mm diameter and connect to them using small pogo test pins in an accurately constructed programming jig.
 The pads could go down to 1.27mm pitch, 2.54mm would be more “comfortable.”"
 High,Write,Shall be possible to write (flash) new firmware to the part.,
 High,Updates,Shall be possible to modify the firmware operating parameters and have them saved persistently.,
 High,Read protection,Shall be possible to backup or read firmware from the part once it’s flashed.,
-High,Parts supply,Shall be designed to use parts that are commonly available from JLBPCB or PCBWAY (or another contract assembler) so we can manufacture it.,All parts have JLCPB reference number.
+,Shall not be possible to read or update the firmware,Once loaded on to the eCom its firmware shall be inaccessible and unchangeable.,
+High,Parts supply,Shall be designed to use parts that are commonly available from JLCPCB or PCBWAY (or another contract assembler) so we can manufacture it.,All parts have JLCPB reference number.
 High,Parts cost,"The parts cost shall not constrain the choice of parts, i.e. choose the best parts to implement the design constraints.","The hardware design process usually involves close scrutiny of part cost vs performance. Its relatively easy to get the performance you want if cost is no constraint, but its also possible to get the same performance at lower cost if time is taken to carefully choose the components & the design itself.
 And surely the final selling price is an important parameter."
 Medium,Layout,"The final parts shall be laid out conventionally with two input voltage pads on the top layer, the right front being positive (to the wire to the right front guide input), and three motor connection pads at the top on the top layer rear.","Pad size: The target is about 3×3.5mm but it could easily be smaller if need to save space. Hawk motor terminals are 2mm wide and the useful length is about 3mm, people are quite used to soldering to relatively small terminals say 2.5x2.5mm (0.1”x0.1”) as a minimum. See diagram showing the preferred position of the pads. Layout time constraints resulted in Remora1 input pads being reversed.  Output pads allow for a 2mm pitch right-angle pin header."
@@ -43,4 +51,3 @@ High,Labeling,The part shall have sufficient silk screen labeling to identify th
 Note: If there’s space labels could be in the copper layer to save having silk screen."
 Medium,Part choice,"If possible the variety of parts shall be minimized, but not to the detriment of the implementation.",
 High,Under voltage lockout,"Any Under-voltage lockout features should not cause either all high-side or all low-side mosfets to be in the on-state, to prevent a short circuit being applied to the motor.",Fortior gate drive IC is OK
-Medium,Layout,Double side component mounting is allowed,
