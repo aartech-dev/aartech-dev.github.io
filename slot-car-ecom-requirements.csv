@@ -37,6 +37,7 @@ The AT32F421 is almost twice as fast as the G071. The STM32G431 is even faster t
 High,Artery Microcontroller,Shall use the same Artery F421 mcu as the Remora.,
 Low,Supply voltage sensing,Mcu shall have a way to sense the supply voltage.,
 High,Tunability,"Shall be able to fine tune the the ESC to achieve maximum motor performance and efficiency, either by feedback from the motor itself or direct input to the ESC.","Brushed DC slot-car motors have commutator advance, to improve their performance in one direction of rotation, it may well be that the brushless motors would also benefit from advance built into the firmware. This is a feature of the Escape32 firmware. Access via 4-way connector to allow access to mcu pins"
+Medium,Programability,Shall be able to alter the characteristics of the eCom by attaching a “WiFi” link by means of a small cable.,This can by means of a small connector on the board. Might not be a desirable feature if the board is to be “locked”.
 High,Debug,Shall be possible to attach a debugger to the part (SWD pins).,"Need to specify where the pads can be located, their size & spacing, without going to any extra expense the pads can  go down to 1mm diameter and connect to them using small pogo test pins in an accurately constructed programming jig.
 The pads could go down to 1.27mm pitch, 2.54mm would be more “comfortable.”"
 High,Write,Shall be possible to write (flash) new firmware to the part.,
