@@ -1,5 +1,7 @@
 # The aart.dev Website
 
+Web site is here https://aartech-dev.github.io/
+
 This was vibe coded using claude.ai
 
 https://claude.ai/chat/348193b7-59ba-41d3-bec4-6d530537112b
