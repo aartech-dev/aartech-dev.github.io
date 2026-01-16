@@ -524,66 +524,7 @@
         }
 
         /* Mobile Responsive */
-        .comparison-table {
-            width: 100%;
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--dark-lighter);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comparison-table th {
-            background: rgba(99, 102, 241, 0.2);
-            color: var(--primary);
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-        }
-
-        .comparison-table tr:hover {
-            background: rgba(99, 102, 241, 0.05);
-        }
-
-        .comparison-table .remora-col {
-            background: rgba(99, 102, 241, 0.1);
-            font-weight: 600;
-        }
-
-        .highlight-win {
-            color: #4ade80;
-            font-weight: 600;
-        }
-
-        .comparison-note {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
-
         @media (max-width: 768px) {
-            .comparison-table {
-                font-size: 0.85rem;
-            }
-            
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.5rem;
-            }
-        }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -628,14 +569,13 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" class="logo-img">
+                <img src="assets/images/aart-logo.png" alt="AART Logo" class="logo-img">
                 <span class="logo-text">AART.dev</span>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#remora-boards">Remora Boards</a></li>
-                <li><a href="#comparison">Comparison</a></li>
                 <li><a href="#motor">AART Motor</a></li>
                 <li><a href="#ordering">Order Form</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -647,7 +587,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
+            <img src="assets/images/aart-logo.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
             <h1>Adrian & Richard's <span class="gradient-text">Technologies</span></h1>
             <p>The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
             <a href="#products" class="cta-button">Explore Our Products</a>
@@ -697,184 +637,7 @@
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section id="comparison">
-        <h2><span class="gradient-text">Performance Comparison</span></h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: var(--text-muted);">
-            Independent testing comparing Remora 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.
-        </p>
-
-        <h3 style="text-align: center; margin-bottom: 2rem;">Technical Specifications</h3>
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Specification</th>
-                        <th class="remora-col">Remora 1</th>
-                        <th>Raivis Edition A</th>
-                        <th>Latvian V2.10</th>
-                        <th>Latvian V2.8</th>
-                        <th>Do Slot</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Weight</strong></td>
-                        <td class="remora-col highlight-win">1.51g</td>
-                        <td>1.90g</td>
-                        <td>2.35g</td>
-                        <td>2.31g</td>
-                        <td>2.00g</td>
-                    </tr>
-                    <tr>
-                        <td><strong>PCB Area</strong></td>
-                        <td class="remora-col highlight-win">380mm²</td>
-                        <td>437mm²</td>
-                        <td>532mm²</td>
-                        <td>529mm²</td>
-                        <td>394mm²</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Board Type</strong></td>
-                        <td class="remora-col">Double-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Thickness</strong></td>
-                        <td class="remora-col">3.09mm</td>
-                        <td>2.99mm</td>
-                        <td>2.87mm</td>
-                        <td>2.95mm</td>
-                        <td>3.92mm</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reverse Polarity Protection</strong></td>
-                        <td class="remora-col highlight-win">Control & Power circuits</td>
-                        <td>Control & Power circuits</td>
-                        <td>Control & Power circuits</td>
-                        <td>Control & Power circuits</td>
-                        <td>Control only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Auto Brake</strong></td>
-                        <td class="remora-col">No</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Output MOSFETs Resistance</strong></td>
-                        <td class="remora-col highlight-win">1.2mΩ (L0302A)</td>
-                        <td>2.5mΩ (CSD17575) / 5.5mΩ (CSD25404)</td>
-                        <td>4.2mΩ (CSD16340) / 5.5mΩ (CSD25404)</td>
-                        <td>4.2mΩ (CSD16340) / 5.5mΩ (CSD25404)</td>
-                        <td>5-6.1mΩ (CSD16340) / 5.5mΩ (CSD25404)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Capacitance</strong></td>
-                        <td class="remora-col">67µF (10× 0805)</td>
-                        <td>53µF (3× 1207)</td>
-                        <td>68µF (5× 1206)</td>
-                        <td>55µF (3× 1207)</td>
-                        <td>95µF (7× 1206)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3 style="text-align: center; margin: 3rem 0 2rem;">Performance Testing (3000Kv Motor)</h3>
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Performance Metric</th>
-                        <th class="remora-col">Remora 1</th>
-                        <th>Raivis Edition A</th>
-                        <th>Latvian V2.10</th>
-                        <th>Latvian V2.8</th>
-                        <th>Do Slot</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Start Voltage</strong></td>
-                        <td class="remora-col highlight-win">1.505V</td>
-                        <td>2.348V</td>
-                        <td>2.193V</td>
-                        <td>1.978V</td>
-                        <td>1.957V</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stop Voltage</strong></td>
-                        <td class="remora-col highlight-win">1.499V</td>
-                        <td>2.02V</td>
-                        <td>1.95V</td>
-                        <td>1.657V</td>
-                        <td>1.955V</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Frequency @ 10V</strong></td>
-                        <td class="remora-col">3.0303kHz (T=1)<br>3.4722kHz (T=31)</td>
-                        <td>3.4602kHz</td>
-                        <td>3.4247kHz</td>
-                        <td>3.1056kHz</td>
-                        <td>3.4130kHz</td>
-                    </tr>
-                    <tr>
-                        <td><strong>No Load Current</strong></td>
-                        <td class="remora-col highlight-win">220mA (T=1)<br>421mA (T=31)</td>
-                        <td>457mA</td>
-                        <td>430mA</td>
-                        <td>284mA</td>
-                        <td>380mA</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Initial Delay (Start)</strong></td>
-                        <td class="remora-col highlight-win">6ms</td>
-                        <td>23ms</td>
-                        <td>23ms</td>
-                        <td>23ms</td>
-                        <td>5ms</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Time to Proper Rotation</strong></td>
-                        <td class="remora-col highlight-win">30ms</td>
-                        <td>75ms</td>
-                        <td>68ms</td>
-                        <td>68ms</td>
-                        <td>Would not start</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Peak Current (Start)</strong></td>
-                        <td class="remora-col highlight-win">14A</td>
-                        <td>20A</td>
-                        <td>20A</td>
-                        <td>20A</td>
-                        <td>11A (could not start)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div style="max-width: 900px; margin: 3rem auto;">
-            <div style="padding: 2rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
-                <h3 style="margin-top: 0; color: var(--primary);">Key Advantages</h3>
-                <ul class="feature-list">
-                    <li><strong>Lightest:</strong> At just 1.51g, Remora 1 is the lightest controller tested</li>
-                    <li><strong>Smallest footprint:</strong> 380mm² PCB area - most compact design</li>
-                    <li><strong>Fastest starting:</strong> 6ms initial delay and 30ms to proper rotation</li>
-                    <li><strong>Lowest operating voltage:</strong> Starts reliably at just 1.5V</li>
-                    <li><strong>Best efficiency:</strong> Lower no-load current and superior MOSFET resistance (1.2mΩ)</li>
-                    <li><strong>Most controlled start:</strong> 14A peak current vs 20A+ for competitors</li>
-                </ul>
-                <p class="comparison-note">Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics.</p>
-            </div>
-        </div>
-    </section>
+    <!-- AART Motor -->
     <section id="motor">
         <h2><span class="gradient-text">22,000Kv Motor</span></h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-muted);">
