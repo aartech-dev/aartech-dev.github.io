@@ -751,7 +751,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="assets/images/aart-logo.png" alt="AART Logo" class="logo-img">
+                <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" class="logo-img">
                 <span class="logo-text">AART.dev</span>
             </div>
             <ul class="nav-links" id="navLinks">
@@ -770,7 +770,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="assets/images/aart-logo.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
+            <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
             <h1>Adrian & Richard's <span class="gradient-text">Technologies</span></h1>
             <p>The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
             <a href="#products" class="cta-button">Explore Our Products</a>
@@ -1409,11 +1409,11 @@
         function renderProductImages(images) {
             if (!images || images.length === 0) return '';
             
-            let imageHTML = images.map(function(img) {
-                return '<img src="' + imageBasePath + img + '" alt="Product image" onerror="this.style.display=\'none\'">';
-            }).join('');
+            const imageHTML = images.map(img => 
+                `<img src="${imageBasePath}${img}" alt="Product image" onerror="this.style.display='none'">`
+            ).join('');
             
-            return '<div class="product-images">' + imageHTML + '</div>';
+            return `<div class="product-images">${imageHTML}</div>`;
         }
 
         function renderSpeedControllers() {
