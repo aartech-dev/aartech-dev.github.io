@@ -1206,15 +1206,15 @@
                 console.error('Error loading products:', error);
                 // Fallback to hardcoded products if file not found
                 productsData = [
-                    { id: "remora1", name: "Remora 1", price_usd: 40, price_gbp: 30, price_eur: 35, weight_grams: 15, images: ["1-top.jpeg", "1-bot.jpeg"] },
-                    { id: "remora2", name: "Remora 2", price_usd: 0, price_gbp: 0, price_eur: 0, weight_grams: 12, note: "Contact for pricing", images: [] },
-                    { id: "wifilink", name: "WiFi Link", price_usd: 24, price_gbp: 18, price_eur: 20, weight_grams: 25, images: ["wifi-link.jpg"] },
-                    { id: "wifilink_clamp", name: "WiFi Link Clamp", price_usd: 9, price_gbp: 5, price_eur: 7, weight_grams: 10, images: ["clamp.jpg"] },
-                    { id: "wifilink_adapter", name: "WiFi Link Adapter", price_usd: 9, price_gbp: 5, price_eur: 6, weight_grams: 8, images: ["aart-adapter.jpg"] },
-                    { id: "wifilink_cable", name: "WiFi Link Cable", price_usd: 3, price_gbp: 1.8, price_eur: 2.5, weight_grams: 3, images: [] },
-                    { id: "wifilink_box", name: "WiFi Link Box", price_usd: 3, price_gbp: 1.5, price_eur: 2, weight_grams: 5, images: [] },
-                    { id: "wifilink_clip", name: "WiFi Link Clip", price_usd: 1.5, price_gbp: 0.8, price_eur: 1, weight_grams: 2, images: ["croc.jpg"] },
-                    { id: "motor_22k", name: "22,000Kv Motor", price_usd: 28, price_gbp: 22, price_eur: 27, weight_grams: 8, images: ["aart-motor-sideon.jpeg", "aart-motor-shaft.jpeg", "aart-motor.png"] }
+                    { id: "remora1", name: "Remora 1", price_gbp: 30, weight_grams: 1.5, images: ["Remora1_top.png", "Remora1_bot.png"] },
+                    { id: "remora2", name: "Remora 2", price_gbp: 0, weight_grams: 1.8, note: "Contact for pricing", images: ["Remora2_top.png", "Remora2_bot.png"] },
+                    { id: "wifilink", name: "WiFi Link", price_gbp: 18, weight_grams: 25, images: ["wifi-link.jpg"] },
+                    { id: "wifilink_clamp", name: "WiFi Link Clamp", price_gbp: 5, weight_grams: 10, images: ["clamp.jpg"] },
+                    { id: "wifilink_adapter", name: "WiFi Link Adapter", price_gbp: 5, weight_grams: 8, images: ["aart-adapter.jpg"] },
+                    { id: "wifilink_cable", name: "WiFi Link Cable", price_gbp: 1.8, weight_grams: 3, images: [] },
+                    { id: "wifilink_box", name: "WiFi Link Box", price_gbp: 1.5, weight_grams: 5, images: [] },
+                    { id: "wifilink_clip", name: "WiFi Link Clip", price_gbp: 0.8, weight_grams: 2, images: ["croc.jpg"] },
+                    { id: "motor_22k", name: "22,000Kv Motor", price_gbp: 22, weight_grams: 8, images: ["aart-motor-sideon.jpeg", "aart-motor-shaft.jpeg", "aart-motor.png"] }
                 ];
                 initializeOrderForm();
                 renderSpeedControllers();
