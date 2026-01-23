@@ -33,11 +33,11 @@
     {
       "id": "remorait",
       "name": "Remora IT",
-      "description": "Double-sided speed controller board, specifically for Slot.it spec. motors and designed to fit.",
+      "description": "Double-sided speed controller board, specifically for SLOT.IT spec. motors and designed to fit their chassis.",
       "price_gbp": 30,
       "weight_grams": 1,
       "category": "speed_controller",
-      "note": "Available soon from slot.it",
+      "note": "Available soon from SLOT.IT",
       "images": ["Remorait_top.png", "Remorait_bot.png"]
     },
     {
