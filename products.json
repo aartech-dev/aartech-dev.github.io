@@ -7,7 +7,7 @@
       "price_gbp": 30,
       "weight_grams": 1,
       "category": "speed_controller",
-      "images": ["1-top.jpeg", "1-bot.jpeg"]
+      "images": ["Remora1_top.png", "Remora1_bot.png"]
     },
     {
       "id": "remora1g",
@@ -18,7 +18,7 @@
       "category": "speed_controller",
       "note": "Available from MidAmerica as the Trixie 2.0",
       "available": false,
-      "images": []
+      "images": ["Remora1g_top.png", "Remora1g_bot.png"]
     },
     {
       "id": "remora2",
@@ -27,8 +27,18 @@
       "price_gbp": 30,
       "weight_grams": 1,
       "category": "speed_controller",
-      "note": "Coming soon - contact for availability",
-      "images": []
+      "note": "Contact us for availability",
+      "images": ["Remora2_top.png", "Remora2_bot.png"]
+    },
+    {
+      "id": "remorait",
+      "name": "Remora IT",
+      "description": "Double-sided speed controller board, specifically for Slot.it spec. motors and designed to fit.",
+      "price_gbp": 30,
+      "weight_grams": 1,
+      "category": "speed_controller",
+      "note": "Available soon from slot.it",
+      "images": ["Remorait_top.png", "Remorait_bot.png"]
     },
     {
       "id": "wifilink",
