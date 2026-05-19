@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+        /* Contact Section */<!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6REDR6GS29"></script>
     <script>
@@ -33,7 +33,7 @@
             --dark-lighter: #1e293b;
             --text: #e2e8f0;
             --text-muted: #94a3b8;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
         }
 
         body {
@@ -180,10 +180,6 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1rem;
         }
 
         .cta-button:hover {
@@ -240,6 +236,12 @@
         .product-card h3 {
             margin-top: 0;
             font-size: 1.5rem;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
         .product-images {
@@ -409,11 +411,6 @@
             color: #4ade80;
         }
 
-        .success-message h4 {
-            margin: 0 0 1rem 0;
-            color: #4ade80;
-        }
-
         .info-icon {
             display: inline-block;
             width: 18px;
@@ -510,8 +507,6 @@
             color: var(--text-muted);
             font-size: 0.85rem;
         }
-
-        /* Contact Section */
         .contact-info {
             background: var(--dark-lighter);
             border-radius: 16px;
@@ -539,7 +534,7 @@
             text-decoration: none;
         }
 
-        /* Comparison Table */
+        /* Mobile Responsive */
         .comparison-table {
             width: 100%;
             overflow-x: auto;
@@ -590,7 +585,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             .comparison-table {
                 font-size: 0.85rem;
@@ -600,7 +594,7 @@
             .comparison-table td {
                 padding: 0.5rem;
             }
-
+        }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -645,13 +639,13 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="assets/images/aart-logo.png" alt="AART Logo" class="logo-img">
+                <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" class="logo-img">
                 <span class="logo-text">AART.dev</span>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#remora-boards">Remora Boards</a></li>
+                <li><a href="#remora-boards">Remora&trade; Boards</a></li>
                 <li><a href="#comparison">Comparison</a></li>
                 <li><a href="#motor">AART Motor</a></li>
                 <li><a href="#ordering">Order Form</a></li>
@@ -664,9 +658,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="assets/images/aart-logo.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
+            <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
             <h1>Adrian & Richard's <span class="gradient-text">Technologies</span></h1>
-            <p>The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
+            <p>The home of the Remora&trade; Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
             <a href="#products" class="cta-button">Explore Our Products</a>
         </div>
     </section>
@@ -683,18 +677,18 @@
                 <h3>Speed Controller Boards</h3>
                 <p>Electronic commutators (eComs) for brushless motors in slot cars. Fast, robust, and flexible.</p>
                 <ul class="feature-list">
-                    <li>Remora 1.2 - Double-sided board</li>
-                    <li>Remora 2 - Single-sided board</li>
-                    <li>Remora 1/g - Genesis board (MidAmerica only)</li>
-                    <li>Remora IT - SLOT.IT exclusive</li>
+                    <li>Remora&trade; 1 - Double-sided board</li>
+                    <li>Remora&trade; 2 - Single-sided board</li>
+                    <li>Remora&trade; 1/g - Genesis board (MidAmerica only)</li>
+                    <li>Remora&trade; IT - Scale model racing (Slot.IT only)</li>
                 </ul>
             </div>
 
             <div class="product-card">
                 <h3>WiFi Link Programmer</h3>
-                <p>Essential tool for programming and configuring your Remora boards.</p>
+                <p>Essential tool for programming and configuring your Remora&trade; boards.</p>
                 <ul class="feature-list">
-                    <li>Programs Remora 1.2 and Remora 2</li>
+                    <li>Programs Remora&trade; 1, Remora&trade; 2 and Remora&trade; IT</li>
                     <li>Set all eCom parameters wirelessly</li>
                     <li>Complete kit or individual parts</li>
                     <li>One programmer serves all boards</li>
@@ -703,35 +697,14 @@
 
             <div class="product-card">
                 <h3>22,000Kv Motor</h3>
-                <p>High-performance brushless motors for competitive slot car racing.</p>
+                <p>High-performance brushless motors for competitive 1/24 Eurosport slot car racing.</p>
                 <ul class="feature-list">
                     <li>1105 size, 6 magnet design</li>
-                    <li>Proven in eurosport racing</li>
-                    <li>Runs perfectly with Remora 1.2</li>
+                    <li>Proven in eurosport and unlimited club racing</li>
+                    <li>Runs perfectly with Remora&trade; 1 and 2</li>
                     <li>13.68mm diameter, 1.5mm shaft</li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Remora Boards -->
-    <section id="remora-boards">
-        <h2><span class="gradient-text">Remora Speed Controller Boards</span></h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem;">
-            The world's best electronic commutators (eComs). <strong>Fastest, cheapest, most robust, and most flexible</strong> speed controllers for slot car brushless motors.
-        </p>
-
-        <div class="product-grid" id="speedControllerGrid">
-            <!-- Products will be loaded here dynamically -->
-        </div>
-
-        <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
-            <h3>Open Source Technology</h3>
-            <p style="color: var(--text-muted); margin: 1rem 0 2rem;">
-                All hardware designs are open source. Firmware uses ESCape32 - exceptional code for Electronic Speed Controllers.
-            </p>
-            <a href="https://github.com/adrianblakey/slot-car-ecom" class="button" style="margin-right: 1rem;">GitHub Repository</a>
-            <a href="https://github.com/adrianblakey/slot-car-ecom/wiki" class="button">View Wiki</a>
         </div>
     </section>
 
@@ -739,7 +712,7 @@
     <section id="comparison">
         <h2><span class="gradient-text">Performance Comparison</span></h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: var(--text-muted);">
-            Independent testing comparing Remora 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.
+            Independent testing comparing Remora&trade; 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.
         </p>
 
         <h3 style="text-align: center; margin-bottom: 2rem;">Technical Specifications</h3>
@@ -748,7 +721,7 @@
                 <thead>
                     <tr>
                         <th>Specification</th>
-                        <th class="remora-col">Remora 1</th>
+                        <th class="remora-col">Remora&trade; 1</th>
                         <th>Raivis Edition A</th>
                         <th>Latvian V2.10</th>
                         <th>Latvian V2.8</th>
@@ -759,7 +732,7 @@
                     <tr>
                         <td><strong>Weight</strong></td>
                         <td class="remora-col highlight-win">1.51g</td>
-                        <td>1.90g</td>
+                        <td>1.45g</td>
                         <td>2.35g</td>
                         <td>2.31g</td>
                         <td>2.00g</td>
@@ -782,7 +755,7 @@
                     </tr>
                     <tr>
                         <td><strong>Thickness</strong></td>
-                        <td class="remora-col">3.09mm</td>
+                        <td class="remora-col">2.89mm</td>
                         <td>2.99mm</td>
                         <td>2.87mm</td>
                         <td>2.95mm</td>
@@ -820,28 +793,10 @@
                         <td>55µF (3× 1207)</td>
                         <td>95µF (7× 1206)</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3 style="text-align: center; margin: 3rem 0 2rem;">Performance Testing (3000Kv Motor)</h3>
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Performance Metric</th>
-                        <th class="remora-col">Remora 1</th>
-                        <th>Raivis Edition A</th>
-                        <th>Latvian V2.10</th>
-                        <th>Latvian V2.8</th>
-                        <th>Do Slot</th>
-                    </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td><strong>Start Voltage</strong></td>
                         <td class="remora-col highlight-win">1.505V</td>
-                        <td>2.348V</td>
+                        <td>1.350V</td>
                         <td>2.193V</td>
                         <td>1.978V</td>
                         <td>1.957V</td>
@@ -849,14 +804,14 @@
                     <tr>
                         <td><strong>Stop Voltage</strong></td>
                         <td class="remora-col highlight-win">1.499V</td>
-                        <td>2.02V</td>
+                        <td>1.155V</td>
                         <td>1.95V</td>
                         <td>1.657V</td>
                         <td>1.955V</td>
                     </tr>
                     <tr>
                         <td><strong>Frequency @ 10V</strong></td>
-                        <td class="remora-col">3.0303kHz (T=1)<br>3.4722kHz (T=31)</td>
+                        <td class="remora-col highlight-win">3.0303kHz (T=1)<br>3.4722kHz (T=31)</td>
                         <td>3.4602kHz</td>
                         <td>3.4247kHz</td>
                         <td>3.1056kHz</td>
@@ -902,19 +857,17 @@
             <div style="padding: 2rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
                 <h3 style="margin-top: 0; color: var(--primary);">Key Advantages</h3>
                 <ul class="feature-list">
-                    <li><strong>Lightest:</strong> At just 1.51g, Remora 1 is the lightest controller tested</li>
+                    <li><strong>Lightest:</strong> At just 1.45g, Remora 1 is the lightest controller tested</li>
                     <li><strong>Smallest footprint:</strong> 380mm² PCB area - most compact design</li>
                     <li><strong>Fastest starting:</strong> 6ms initial delay and 30ms to proper rotation</li>
-                    <li><strong>Lowest operating voltage:</strong> Starts reliably at just 1.5V</li>
+                    <li><strong>Lowest operating voltage:</strong> Starts reliably at just 1.35V</li>
                     <li><strong>Best efficiency:</strong> Lower no-load current and superior MOSFET resistance (1.2mΩ)</li>
                     <li><strong>Most controlled start:</strong> 14A peak current vs 20A+ for competitors</li>
                 </ul>
-                <p class="comparison-note">Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics.</p>
+                <p class="comparison-note">Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics. <a href="DoSlot-LatvianEcomInfoCompressed.pdf">Download the complete pdf document.</a></p>
             </div>
         </div>
     </section>
-
-    <!-- AART Motor -->
     <section id="motor">
         <h2><span class="gradient-text">22,000Kv Motor</span></h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-muted);">
@@ -926,11 +879,32 @@
         </div>
 
         <div style="max-width: 800px; margin: 2rem auto; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
-            <p><strong>Installation Note:</strong> Requires careful installation - use a dremel wheel to grind off circlip or add spacers. Contact us for improvement ideas!</p>
+            <p><strong>Installation Note:</strong> Requires careful installation - use a dremel wheel to grind off the circlip or add spacers. Contact us for improvement ideas!</p>
         </div>
 
         <div style="text-align: center; margin-top: 2rem;">
             <a href="#ordering" class="cta-button">Order Motors</a>
+        </div>
+    </section>
+
+    <!-- Remora Boards -->
+    <section id="remora-boards">
+        <h2><span class="gradient-text">Remora&trade; Speed Controller Boards</span></h2>
+        <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            The world's best electronic commutators (eComs). <strong>Fastest, cheapest, most robust, and most flexible</strong> speed controllers for slot car brushless motors.
+        </p>
+
+        <div class="product-grid" id="speedControllerGrid">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+
+        <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
+            <h3>Open Source Technology</h3>
+            <p style="color: var(--text-muted); margin: 1rem 0 2rem;">
+                The Rermora 1's hardware designs are open source. Firmware uses ESCape32 - exceptional code for Electronic Speed Controllers.
+            </p>
+            <a href="https://github.com/adrianblakey/slot-car-ecom" class="button" style="margin-right: 1rem;">GitHub Repository</a>
+            <a href="https://github.com/adrianblakey/slot-car-ecom/wiki" class="button">View Wiki</a>
         </div>
     </section>
 
@@ -961,21 +935,91 @@
                     <div class="form-group">
                         <label for="shippingCountry">Shipping Country *</label>
                         <select id="shippingCountry" required>
-                            <option value="">Select country</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="US">United States</option>
-                            <option value="DE">Germany</option>
-                            <option value="FR">France</option>
-                            <option value="ES">Spain</option>
-                            <option value="IT">Italy</option>
-                            <option value="NL">Netherlands</option>
-                            <option value="BE">Belgium</option>
-                            <option value="AT">Austria</option>
-                            <option value="BR">Brazil</option>
-                            <option value="AR">Argentina</option>
-                            <option value="PY">Paraguay</option>
-                            <option value="UY">Uruguay</option>
-                            <option value="other">Other</option>
+                        <option value="">Select country</option>
+
+                        <!-- Priority countries -->
+                        <option value="US">United States</option>
+                        <option value="IT">Italy</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="ES">Spain</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="BE">Belgium</option>
+                        <option value="AT">Austria</option>
+
+                        <!-- Eastern / Central / Northern Europe -->
+                        <option value="FI">Finland</option>
+                        <option value="CZ">Czech Republic</option>
+                        <option value="PL">Poland</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="HU">Hungary</option>
+                        <option value="RO">Romania</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="HR">Croatia</option>
+                        <option value="EE">Estonia</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="BY">Belarus</option>
+                        <option value="MD">Moldova</option>
+                        <option value="RS">Serbia</option>
+                        <option value="ME">Montenegro</option>
+                        <option value="BA">Bosnia and Herzegovina</option>
+                        <option value="MK">North Macedonia</option>
+                        <option value="AL">Albania</option>
+
+                        <!-- Rest of world (alphabetical) -->
+                        <option value="AF">Afghanistan</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AG">Antigua and Barbuda</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AM">Armenia</option>
+                        <option value="AU">Australia</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BS">Bahamas</option>
+                        <option value="BH">Bahrain</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BB">Barbados</option>
+                        <option value="BZ">Belize</option>
+                        <option value="BJ">Benin</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="BW">Botswana</option>
+                        <option value="BR">Brazil</option>
+                        <option value="BN">Brunei</option>
+                        <option value="BF">Burkina Faso</option>
+                        <option value="BI">Burundi</option>
+                        <option value="KH">Cambodia</option>
+                        <option value="CM">Cameroon</option>
+                        <option value="CA">Canada</option>
+                        <option value="CL">Chile</option>
+                        <option value="CN">China</option>
+                        <option value="CO">Colombia</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="DK">Denmark</option>
+                        <option value="EG">Egypt</option>
+                        <option value="GR">Greece</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="IE">Ireland</option>
+                        <option value="IL">Israel</option>
+                        <option value="JP">Japan</option>
+                        <option value="KR">South Korea</option>
+                        <option value="MX">Mexico</option>
+                        <option value="NO">Norway</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="PT">Portugal</option>
+                        <option value="SG">Singapore</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="TW">Taiwan</option>
+                        <option value="TR">Turkey</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="VN">Vietnam</option>
                         </select>
                     </div>
                 </div>
@@ -996,37 +1040,30 @@
 
                 <div class="form-group" id="tariffCodeGroup" style="display: none;">
                     <label>
-                        Tariff/HS Code (for customs declaration)
+                        Tariff/HS Code (Required for non-UK shipments)
                         <span class="info-icon">?
                             <div class="info-popup">
                                 <h5>About Tariff Codes</h5>
-                                <p><strong>Default codes by region:</strong></p>
-                                <p><strong>Most countries:</strong> 8504 4087 90 - Static converters/controllers</p>
-                                <p><strong>Brazil/Mercosul:</strong> NCM 95030091 - Toy accessories</p>
-                                <p>If your country requires a different code, please select "Custom" and specify in the additional notes.</p>
+                                <p>For international customs, we need to declare the correct tariff code for your products.</p>
+                                <p><strong>HTSUS 9503.00.0073:</strong> Toy accessory classification - may be duty-free if accepted as a toy component.</p>
+                                <p><strong>8504.40.40:</strong> Static converter/controller - generally duty-free and widely accepted for electronic speed controllers.</p>
+                                <p>Select the code that best matches your country's import requirements.</p>
                             </div>
                         </span>
                     </label>
                     <div class="tariff-options">
                         <label class="tariff-option">
-                            <input type="radio" name="tariffCode" value="8504408790" checked>
+                            <input type="radio" name="tariffCode" value="9503.00.0073">
                             <div class="tariff-option-content">
-                                <strong>8504 4087 90 - Static Converters (Default)</strong>
-                                <small>Standard for most countries. Electronic speed controller classification.</small>
-                            </div>
-                        </label>
-                        <label class="tariff-option" id="mercosulOption" style="display: none;">
-                            <input type="radio" name="tariffCode" value="NCM95030091">
-                            <div class="tariff-option-content">
-                                <strong>NCM 95030091 - Toy Accessories (Mercosul)</strong>
-                                <small>For Brazil, Argentina, Paraguay, Uruguay. Electronic toy slot car components.</small>
+                                <strong>HTSUS 9503.00.0073 - Toy Accessories</strong>
+                                <small>Electronic toy slot car component. May be duty-free. Best for customers who use these exclusively for toy slot car racing.</small>
                             </div>
                         </label>
                         <label class="tariff-option">
-                            <input type="radio" name="tariffCode" value="custom">
+                            <input type="radio" name="tariffCode" value="8504.40.40">
                             <div class="tariff-option-content">
-                                <strong>Custom Code</strong>
-                                <small>I will specify a different tariff code in the additional notes below.</small>
+                                <strong>8504.40.40 - Static Converters/Controllers</strong>
+                                <small>Electronic speed controller. Generally duty-free and widely accepted by customs authorities.</small>
                             </div>
                         </label>
                     </div>
@@ -1044,13 +1081,13 @@
                     <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Speed Controller Boards</h4>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="remora1" value="Remora 1.2">
-                            <label for="remora1">Remora 1.2 (£30)</label>
+                            <input type="checkbox" id="remora1" value="Remora 1">
+                            <label for="remora1">Remora 1 £30</label>
                             <input type="number" class="quantity-input" id="remora1Qty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="remora2" value="Remora 2">
-                            <label for="remora2">Remora 2 (£39.95)</label>
+                            <label for="remora2">Remora 2 (Contact for pricing)</label>
                             <input type="number" class="quantity-input" id="remora2Qty" min="1" value="1" disabled>
                         </div>
                     </div>
@@ -1059,32 +1096,32 @@
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink" value="WiFi Link">
-                            <label for="wifilink">WiFi Link Complete (£27.50)</label>
+                            <label for="wifilink">WiFi Link Complete £27.50</label>
                             <input type="number" class="quantity-input" id="wifilinkQty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink_clamp" value="WiFi Link Clamp">
-                            <label for="wifilink_clamp">Clamp (£5)</label>
+                            <label for="wifilink_clamp">Clamp £7</label>
                             <input type="number" class="quantity-input" id="wifilink_clampQty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink_adapter" value="WiFi Link Adapter">
-                            <label for="wifilink_adapter">Adapter (£7)</label>
+                            <label for="wifilink_adapter">Adapter £8</label>
                             <input type="number" class="quantity-input" id="wifilink_adapterQty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink_cable" value="WiFi Link Cable">
-                            <label for="wifilink_cable">Cable (£2)</label>
+                            <label for="wifilink_cable">Cable £2</label>
                             <input type="number" class="quantity-input" id="wifilink_cableQty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink_box" value="WiFi Link Box">
-                            <label for="wifilink_box">Box (£2)</label>
+                            <label for="wifilink_box">Box £3</label>
                             <input type="number" class="quantity-input" id="wifilink_boxQty" min="1" value="1" disabled>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink_clip" value="WiFi Link Clip">
-                            <label for="wifilink_clip">Clip (£1)</label>
+                            <label for="wifilink_clip">Clip £1</label>
                             <input type="number" class="quantity-input" id="wifilink_clipQty" min="1" value="1" disabled>
                         </div>
                     </div>
@@ -1093,7 +1130,7 @@
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="motor_22k" value="22,000Kv Motor">
-                            <label for="motor_22k">22,000Kv Motor (£22)</label>
+                            <label for="motor_22k">22,000Kv Motor £22</label>
                             <input type="number" class="quantity-input" id="motor_22kQty" min="1" value="1" disabled>
                         </div>
                     </div>
@@ -1118,73 +1155,28 @@
 
     <!-- Contact -->
     <section id="contact">
-        <h2><span class="gradient-text">Contact Us</span></h2>
+        <h2><span class="gradient-text">Get in Touch</span></h2>
         
         <div class="contact-info">
-            <h3>Send Us a Message</h3>
-            <p style="margin-bottom: 2rem;">Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</p>
+            <h3>Questions or Inquiries?</h3>
+            <p style="margin-bottom: 2rem;">We're happy to answer any questions. This is a hobby project, so please be persistent if we don't respond immediately!</p>
             
-            <div id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactName">Your Name *</label>
-                        <input type="text" id="contactName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Your Email *</label>
-                        <input type="email" id="contactEmail" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactPhone">Phone Number</label>
-                        <input type="tel" id="contactPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactWhatsApp">WhatsApp Number</label>
-                        <input type="tel" id="contactWhatsApp" placeholder="Include country code (e.g., +44 7700 900000)">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactMessage">Your Message *</label>
-                    <textarea id="contactMessage" required placeholder="How can we help you?" style="min-height: 150px;"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactAttachments">Attachments (optional)</label>
-                    <input type="file" id="contactAttachments" multiple style="padding: 0.5rem;">
-                    <small style="display: block; margin-top: 0.5rem; color: var(--text-muted);">You can attach images, documents, or other files (max 10MB total)</small>
-                </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button onclick="sendContactMessage()" class="cta-button">Send Message</button>
-                </div>
-
-                <div id="contactSuccessMessage" style="display: none;" class="success-message">
-                    <h4>✓ Message Ready!</h4>
-                    <p>Your message has been prepared. Click the button below to send it via your email client.</p>
-                    <div style="margin-top: 1rem;">
-                        <a id="contactEmailLink" href="#" class="cta-button" style="display: inline-block; text-decoration: none;">Open Email Client</a>
-                    </div>
-                </div>
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="mailto:sales@aart.dev?subject=[Inquiry]" class="cta-button">Email Us</a>
             </div>
 
-            <h3 style="margin-top: 3rem;">Other Ways to Reach Us</h3>
-            <p>Email us directly at: <a href="mailto:sales@aart.dev" style="color: var(--primary);">sales@aart.dev</a></p>
+            <h3>Need Immediate Help?</h3>
+            <p>Join the <a href="https://discord.com/channels/1103745257046278144/1151565789984469144" style="color: var(--primary);">ESCape32 Discord server</a> - slot car channel</p>
 
             <h3>Community & Resources</h3>
             <ul class="feature-list">
-                <li>Join the <a href="https://discord.com/channels/1103745257046278144/1151565789984469144" style="color: var(--primary);">ESCape32 Discord server</a> - slot car channel</li>
                 <li><a href="https://github.com/adrianblakey/slot-car-ecom" style="color: var(--primary);">GitHub Repository</a></li>
                 <li><a href="https://github.com/adrianblakey/slot-car-ecom/wiki" style="color: var(--primary);">Getting Started Wiki</a></li>
                 <li><a href="https://slotcarracing.org.uk/" style="color: var(--primary);">British Slot Car Racing Association</a></li>
             </ul>
 
             <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
-                <p><strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don't respond immediately.</p>
-                <p style="margin-top: 0.5rem;"><strong>Privacy:</strong> We do not sell or share your information.</p>
+                <p><strong>Guarantee:</strong> We believe in providing the best service possible and will replace any parts you think are defective.</p>
             </div>
         </div>
     </section>
@@ -1198,30 +1190,32 @@
 
     <script>
         // Load products from JSON file
-        var productsData = [];
-        var imageBasePath = 'assets/images/';
+        let productsData = [];
+        let imageBasePath = 'assets/images/';
 
+        // Fetch products data
         fetch('products.json')
-            .then(function(response) { return response.json(); })
-            .then(function(data) {
+            .then(response => response.json())
+            .then(data => {
                 productsData = data.products;
                 imageBasePath = data.image_base_path || 'assets/images/';
                 initializeOrderForm();
                 renderSpeedControllers();
                 renderMotor();
             })
-            .catch(function(error) {
+            .catch(error => {
                 console.error('Error loading products:', error);
+                // Fallback to hardcoded products if file not found
                 productsData = [
-                    { id: "remora1", name: "Remora 1.2", price_gbp: 30, weight_grams: 1, images: ["Remora1_top.png", "Remora1_bot.png"], category: "speed_controller", description: "Double-sided speed controller board" },
-                    { id: "remora2", name: "Remora 2", price_gbp: 39.95, weight_grams: 1, images: ["Remora2_top.png", "Remora2_bot.png"], category: "speed_controller", description: "Single-sided speed controller board" },
-                    { id: "wifilink", name: "WiFi Link", price_gbp: 27.50, weight_grams: 25, images: ["wifi-link.jpg"], category: "programmer", description: "Complete programmer for Remora" },
-                    { id: "wifilink_clamp", name: "WiFi Link Clamp", price_gbp: 5, weight_grams: 10, images: ["clamp.jpg"], category: "programmer_part", description: "Replacement clamp" },
-                    { id: "wifilink_adapter", name: "WiFi Link Adapter", price_gbp: 7, weight_grams: 8, images: ["aart-adapter.jpg"], category: "programmer_part", description: "Replacement adapter" },
-                    { id: "wifilink_cable", name: "WiFi Link Cable", price_gbp: 2.0, weight_grams: 1, images: [], category: "programmer_part", description: "Replacement cable" },
-                    { id: "wifilink_box", name: "WiFi Link Box", price_gbp: 2.0, weight_grams: 2, images: [], category: "programmer_part", description: "Replacement box" },
-                    { id: "wifilink_clip", name: "WiFi Link Clip", price_gbp: 1.0, weight_grams: 1, images: ["croc.jpg"], category: "programmer_part", description: "Replacement clip" },
-                    { id: "motor_22k", name: "22,000Kv Motor", price_gbp: 22, weight_grams: 8, images: ["aart-motor-sideon.jpeg", "aart-motor-shaft.jpeg", "aart-motor.png"], category: "motor", description: "High performance motor" }
+                    { id: "remora1", name: "Remora 1", price_gbp: 30, weight_grams: 1.5, images: ["Remora1_top.png", "Remora1_bot.png"] },
+                    { id: "remora2", name: "Remora 2", price_gbp: 0, weight_grams: 1.8, note: "Contact for pricing", images: ["Remora2_top.png", "Remora2_bot.png"] },
+                    { id: "wifilink", name: "WiFi Link", price_gbp: 18, weight_grams: 25, images: ["wifi-link.jpg"] },
+                    { id: "wifilink_clamp", name: "WiFi Link Clamp", price_gbp: 5, weight_grams: 10, images: ["clamp.jpg"] },
+                    { id: "wifilink_adapter", name: "WiFi Link Adapter", price_gbp: 5, weight_grams: 8, images: ["aart-adapter.jpg"] },
+                    { id: "wifilink_cable", name: "WiFi Link Cable", price_gbp: 1.8, weight_grams: 3, images: [] },
+                    { id: "wifilink_box", name: "WiFi Link Box", price_gbp: 1.5, weight_grams: 5, images: [] },
+                    { id: "wifilink_clip", name: "WiFi Link Clip", price_gbp: 0.8, weight_grams: 2, images: ["croc.jpg"] },
+                    { id: "motor_22k", name: "22,000Kv Motor", price_gbp: 22, weight_grams: 8, images: ["aart-motor-sideon.jpeg", "aart-motor-shaft.jpeg", "aart-motor.png"] }
                 ];
                 initializeOrderForm();
                 renderSpeedControllers();
@@ -1231,246 +1225,234 @@
         function renderProductImages(images) {
             if (!images || images.length === 0) return '';
             
-            var imageHTML = '';
-            for (var i = 0; i < images.length; i++) {
-                imageHTML += '<img src="' + imageBasePath + images[i] + '" alt="Product image" onerror="this.style.display=\'none\'">';
-            }
+            const imageHTML = images.map(img => 
+                `<img src="${imageBasePath}${img}" alt="Product image" onerror="this.style.display='none'">`
+            ).join('');
             
-            return '<div class="product-images">' + imageHTML + '</div>';
+            return `<div class="product-images">${imageHTML}</div>`;
         }
 
         function renderSpeedControllers() {
-            var speedControllers = [];
-            for (var i = 0; i < productsData.length; i++) {
-                if (productsData[i].category === 'speed_controller') {
-                    speedControllers.push(productsData[i]);
-                }
-            }
+            const speedControllers = productsData.filter(p => p.category === 'speed_controller');
+            const grid = document.getElementById('speedControllerGrid');
             
-            var grid = document.getElementById('speedControllerGrid');
             if (!grid) return;
             
-            var html = '';
-            for (var i = 0; i < speedControllers.length; i++) {
-                var product = speedControllers[i];
-                var priceHTML = product.price_gbp > 0 
-                    ? '<p class="price">£' + product.price_gbp + '</p>'
-                    : (product.note ? '<p style="color: var(--text-muted); font-weight: 600; margin-bottom: 1rem;">' + product.note + '</p>' : '');
+            grid.innerHTML = speedControllers.map(product => {
+                const priceHTML = product.price_usd > 0 
+                    ? `<p class="price">${product.price_usd} / £${product.price_gbp} / €${product.price_eur}</p>`
+                    : `<p style="color: var(--accent); font-weight: 600; margin-bottom: 1rem;">${product.note || 'Contact for pricing'}</p>`;
                 
-                var buttonHTML = '';
-                if (product.id === 'remora1' || product.id === 'remora2') {
-                    buttonHTML = '<a href="#ordering" class="button">Order Now</a>';
-                } else if (product.id === 'remora1g' || product.id === 'remorait') {
-                    buttonHTML = '';
-                } else {
-                    buttonHTML = '<a href="mailto:sales@aart.dev?subject=[' + product.name + ' Inquiry]" class="button">Contact Us</a>';
-                }
+                const buttonHTML = product.id === 'remora1' 
+                    ? `<a href="#ordering" class="button">Order Now</a>`
+                    : product.id === 'remora1g'
+                    ? `<p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Available exclusively from MidAmerica</p>`
+                    : `<a href="mailto:sales@aart.dev?subject=[${product.name} Inquiry]" class="button">Contact Us</a>`;
                 
-                html += '<div class="product-card">' +
-                    '<h3>' + product.name + '</h3>' +
-                    priceHTML +
-                    renderProductImages(product.images) +
-                    '<p>' + product.description + '</p>' +
-                    buttonHTML +
-                    '</div>';
-            }
-            grid.innerHTML = html;
+                return `
+                    <div class="product-card">
+                        <h3>${product.name}</h3>
+                        ${priceHTML}
+                        ${renderProductImages(product.images)}
+                        <p>${product.description}</p>
+                        ${buttonHTML}
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderMotor() {
-            var motor = null;
-            for (var i = 0; i < productsData.length; i++) {
-                if (productsData[i].id === 'motor_22k') {
-                    motor = productsData[i];
-                    break;
-                }
-            }
+            const motor = productsData.find(p => p.id === 'motor_22k');
+            const motorDiv = document.getElementById('motorProduct');
             
-            var motorDiv = document.getElementById('motorProduct');
             if (!motorDiv || !motor) return;
             
-            var imageHTML = renderProductImages(motor.images);
-            
-            motorDiv.innerHTML = '<div class="product-card" style="max-width: 800px; margin: 0 auto;">' +
-                '<h3>' + motor.name + '</h3>' +
-                '<p class="price">£' + motor.price_gbp + '</p>' +
-                imageHTML +
-                '<div class="specs-table" style="margin-top: 2rem;">' +
-                    '<h3>Specifications</h3>' +
-                    '<table>' +
-                        '<tr><td>Speed Rating</td><td>22,000Kv</td></tr>' +
-                        '<tr><td>Configuration</td><td>1105, 6 magnet motors (9N6P)</td></tr>' +
-                        '<tr><td>Diameter</td><td>13.68mm (.5395")</td></tr>' +
-                        '<tr><td>Shaft</td><td>1.5mm with 110mm lead wires</td></tr>' +
-                        '<tr><td>Winding</td><td>5 turns of 0.38mm wire, Delta termination</td></tr>' +
-                        '<tr><td>Compatibility</td><td>Fits with 3/32" axle, 5:40 72p gearing</td></tr>' +
-                        '<tr><td>Weight</td><td>' + motor.weight_grams + 'g</td></tr>' +
-                    '</table>' +
-                '</div>' +
-            '</div>';
+            motorDiv.innerHTML = `
+                <div class="product-card" style="max-width: 800px; margin: 0 auto;">
+                    <h3>${motor.name}</h3>
+                    <p class="price">${motor.price_usd} / £${motor.price_gbp} / €${motor.price_eur}</p>
+                    ${renderProductImages(motor.images)}
+                    <div class="specs-table" style="margin-top: 2rem;">
+                        <h3>Specifications</h3>
+                        <table>
+                            <tr>
+                                <td>Speed Rating</td>
+                                <td>22,000Kv</td>
+                            </tr>
+                            <tr>
+                                <td>Configuration</td>
+                                <td>1105, 6 magnet motors (9N6P)</td>
+                            </tr>
+                            <tr>
+                                <td>Diameter</td>
+                                <td>13.68mm (.5395")</td>
+                            </tr>
+                            <tr>
+                                <td>Shaft</td>
+                                <td>1.5mm with 110mm lead wires</td>
+                            </tr>
+                            <tr>
+                                <td>Winding</td>
+                                <td>5 turns of 0.38mm wire, Delta termination</td>
+                            </tr>
+                            <tr>
+                                <td>Compatibility</td>
+                                <td>Fits with 3/32" axle, 5:40 72p gearing</td>
+                            </tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td>${motor.weight_grams}g</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            `;
         }
 
         function initializeOrderForm() {
-            for (var i = 0; i < productsData.length; i++) {
-                var product = productsData[i];
-                var checkbox = document.getElementById(product.id);
-                var qtyInput = document.getElementById(product.id + 'Qty');
+            // Enable/disable quantity inputs based on checkbox
+            productsData.forEach(product => {
+                const checkbox = document.getElementById(product.id);
+                const qtyInput = document.getElementById(product.id + 'Qty');
                 
                 if (checkbox && qtyInput) {
-                    checkbox.addEventListener('change', function(e) {
-                        var id = e.target.id;
-                        var qty = document.getElementById(id + 'Qty');
-                        qty.disabled = !e.target.checked;
+                    checkbox.addEventListener('change', (e) => {
+                        qtyInput.disabled = !e.target.checked;
                     });
                 }
-            }
+            });
         }
 
-        var mobileToggle = document.getElementById('mobileToggle');
-        var navLinks = document.getElementById('navLinks');
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
 
-        mobileToggle.addEventListener('click', function() {
+        mobileToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
+        // Close mobile menu when link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        document.addEventListener('click', function(e) {
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
             if (!e.target.closest('nav')) {
                 navLinks.classList.remove('active');
             }
         });
 
-        var shippingCountry = document.getElementById('shippingCountry');
-        var tariffCodeGroup = document.getElementById('tariffCodeGroup');
+        // Show/hide tariff code field based on shipping country
+        const shippingCountry = document.getElementById('shippingCountry');
+        const tariffCodeGroup = document.getElementById('tariffCodeGroup');
 
         if (shippingCountry && tariffCodeGroup) {
-            shippingCountry.addEventListener('change', function(e) {
-                var mercosulCountries = ['BR', 'AR', 'PY', 'UY'];
-                var isMercosul = mercosulCountries.indexOf(e.target.value) !== -1;
-                var mercosulOption = document.getElementById('mercosulOption');
-                
+            shippingCountry.addEventListener('change', (e) => {
                 if (e.target.value && e.target.value !== 'UK') {
                     tariffCodeGroup.style.display = 'block';
-                    
-                    if (isMercosul && mercosulOption) {
-                        mercosulOption.style.display = 'block';
-                        mercosulOption.querySelector('input').checked = true;
-                    } else if (mercosulOption) {
-                        mercosulOption.style.display = 'none';
-                        document.querySelector('input[name="tariffCode"][value="8504408790"]').checked = true;
-                    }
+                    // Make tariff code required for non-UK
+                    const tariffRadios = document.querySelectorAll('input[name="tariffCode"]');
+                    tariffRadios.forEach(radio => radio.required = true);
                 } else {
                     tariffCodeGroup.style.display = 'none';
+                    // Make tariff code optional for UK
+                    const tariffRadios = document.querySelectorAll('input[name="tariffCode"]');
+                    tariffRadios.forEach(radio => radio.required = false);
                 }
             });
         }
 
+        // Generate order file
         function generateOrder() {
-            var fullName = document.getElementById('fullName').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var shippingAddress = document.getElementById('shippingAddress').value;
-            var shippingCountry = document.getElementById('shippingCountry').value;
-            var shippingPreference = document.getElementById('shippingPreference').value;
-            var additionalNotes = document.getElementById('additionalNotes').value;
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const shippingAddress = document.getElementById('shippingAddress').value;
+            const shippingPreference = document.getElementById('shippingPreference').value;
+            const additionalNotes = document.getElementById('additionalNotes').value;
 
-            var tariffCode = '';
-            var tariffDescription = '';
-            if (shippingCountry && shippingCountry !== 'UK') {
-                var selectedTariff = document.querySelector('input[name="tariffCode"]:checked');
-                if (selectedTariff) {
-                    tariffCode = selectedTariff.value;
-                    if (tariffCode === '8504408790') {
-                        tariffDescription = '8504 4087 90 - Static Converters/Controllers\n\nElectronic speed controller classification. Standard for most countries.';
-                    } else if (tariffCode === 'NCM95030091') {
-                        tariffDescription = 'NCM 95030091 - Toy Accessories (Mercosul NCM)\n\nElectronic toy slot car components. For Brazil, Argentina, Paraguay, and Uruguay.';
-                    } else if (tariffCode === 'custom') {
-                        tariffDescription = 'Custom tariff code - specified in additional notes below.';
-                    }
-                }
-            }
-
-            if (!fullName || !email || !phone || !shippingAddress || !shippingCountry || !shippingPreference) {
+            // Validation
+            if (!fullName || !email || !phone || !shippingAddress || !shippingPreference) {
                 alert('Please fill in all required fields (marked with *)');
                 return;
             }
 
-            var selectedProducts = [];
-            for (var i = 0; i < productsData.length; i++) {
-                var p = productsData[i];
-                var checkbox = document.getElementById(p.id);
-                if (checkbox && checkbox.checked) {
-                    selectedProducts.push(p);
-                }
-            }
+            // Check if at least one product is selected
+            const selectedProducts = productsData.filter(p => {
+                const checkbox = document.getElementById(p.id);
+                return checkbox && checkbox.checked;
+            });
             
             if (selectedProducts.length === 0) {
                 alert('Please select at least one product');
                 return;
             }
 
-            var orderText = 'AART ORDER FORM\n' +
-                '========================\n' +
-                'Date: ' + new Date().toLocaleString() + '\n\n' +
-                'CUSTOMER INFORMATION\n' +
-                '--------------------\n' +
-                'Name: ' + fullName + '\n' +
-                'Email: ' + email + '\n' +
-                'Phone: ' + phone + '\n\n' +
-                'SHIPPING ADDRESS\n' +
-                '----------------\n' +
-                shippingAddress + '\n' +
-                'Country: ' + getCountryName(shippingCountry) + '\n\n' +
-                'SHIPPING PREFERENCE\n' +
-                '-------------------\n' +
-                shippingPreference.charAt(0).toUpperCase() + shippingPreference.slice(1) + '\n\n';
+            // Build order text
+            let orderText = `AART ORDER FORM
+========================
+Date: ${new Date().toLocaleString()}
 
-            if (tariffCode) {
-                orderText += 'CUSTOMS/TARIFF INFORMATION\n' +
-                    '----------------------------\n' +
-                    'Tariff Code: ' + tariffCode + '\n\n' +
-                    tariffDescription + '\n\n';
-            }
+CUSTOMER INFORMATION
+--------------------
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
 
-            orderText += 'PRODUCTS ORDERED\n----------------\n';
+SHIPPING ADDRESS
+----------------
+${shippingAddress}
 
-            var totalWeight = 0;
-            for (var i = 0; i < selectedProducts.length; i++) {
-                var product = selectedProducts[i];
-                var qtyInput = document.getElementById(product.id + 'Qty');
-                var quantity = qtyInput ? qtyInput.value : 1;
-                orderText += product.name + ' (ID: ' + product.id + ')\n' +
-                    '  Quantity: ' + quantity + '\n' +
-                    '  Price: £' + product.price_gbp + '\n' +
-                    '  Weight: ' + product.weight_grams + 'g each\n\n';
+SHIPPING PREFERENCE
+-------------------
+${shippingPreference.charAt(0).toUpperCase() + shippingPreference.slice(1)}
+
+PRODUCTS ORDERED
+----------------
+`;
+
+            let totalWeight = 0;
+            selectedProducts.forEach(product => {
+                const qtyInput = document.getElementById(product.id + 'Qty');
+                const quantity = qtyInput ? qtyInput.value : 1;
+                orderText += `${product.name} (ID: ${product.id})
+  Quantity: ${quantity}
+  Price: ${product.price_usd} / £${product.price_gbp} / €${product.price_eur}
+  Weight: ${product.weight_grams}g each
+\n`;
                 totalWeight += product.weight_grams * quantity;
-            }
+            });
 
-            orderText += '\nTOTAL WEIGHT: ' + totalWeight + 'g\n';
+            orderText += `\nTOTAL WEIGHT: ${totalWeight}g\n`;
 
             if (additionalNotes) {
-                orderText += '\nADDITIONAL NOTES\n----------------\n' + additionalNotes + '\n';
+                orderText += `\nADDITIONAL NOTES
+----------------
+${additionalNotes}
+`;
             }
 
-            orderText += '\n========================\n' +
-                'Please respond with:\n' +
-                '- Order number\n' +
-                '- Price quote (parts + shipping)\n' +
-                '- Lead time\n\n' +
-                'Payment methods accepted:\n' +
-                '- PayPal (friends and family)\n' +
-                '- Direct debit (UK)\n' +
-                '- Zelle (US)\n\n' +
-                'Note: We do not sell your information.\n';
+            orderText += `\n========================
+Please respond with:
+- Order number
+- Price quote (parts + shipping)
+- Lead time
 
-            var blob = new Blob([orderText], { type: 'text/plain' });
-            var url = window.URL.createObjectURL(blob);
-            var a = document.createElement('a');
+Payment methods accepted:
+- PayPal (friends and family)
+- Direct debit (UK)
+- Zelle (US)
+
+Note: We do not sell your information.
+`;
+
+            // Create downloadable file
+            const blob = new Blob([orderText], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
             a.href = url;
             a.download = 'AART_Order.txt';
             document.body.appendChild(a);
@@ -1478,66 +1460,11 @@
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
 
+            // Show success message
             document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function getCountryName(code) {
-            var countries = {
-                'UK': 'United Kingdom',
-                'US': 'United States',
-                'DE': 'Germany',
-                'FR': 'France',
-                'ES': 'Spain',
-                'IT': 'Italy',
-                'NL': 'Netherlands',
-                'BE': 'Belgium',
-                'AT': 'Austria',
-                'BR': 'Brazil',
-                'AR': 'Argentina',
-                'PY': 'Paraguay',
-                'UY': 'Uruguay',
-                'other': 'Other (specified in address)'
-            };
-            return countries[code] || code;
-        }
-
-        function sendContactMessage() {
-            var name = document.getElementById('contactName').value;
-            var email = document.getElementById('contactEmail').value;
-            var phone = document.getElementById('contactPhone').value;
-            var whatsapp = document.getElementById('contactWhatsApp').value;
-            var message = document.getElementById('contactMessage').value;
-            var attachments = document.getElementById('contactAttachments').files;
-
-            if (!name || !email || !message) {
-                alert('Please fill in your name, email, and message');
-                return;
-            }
-
-            var emailBody = 'CONTACT MESSAGE FROM AART.DEV\n';
-            emailBody += '================================\n\n';
-            emailBody += 'From: ' + name + '\n';
-            emailBody += 'Email: ' + email + '\n';
-            if (phone) emailBody += 'Phone: ' + phone + '\n';
-            if (whatsapp) emailBody += 'WhatsApp: ' + whatsapp + '\n';
-            emailBody += '\n--- MESSAGE ---\n\n';
-            emailBody += message + '\n\n';
             
-            if (attachments.length > 0) {
-                emailBody += '\n--- ATTACHMENTS ---\n';
-                for (var i = 0; i < attachments.length; i++) {
-                    emailBody += '- ' + attachments[i].name + ' (' + (attachments[i].size / 1024).toFixed(2) + ' KB)\n';
-                }
-                emailBody += '\nNote: Please attach these files manually to the email.\n';
-            }
-
-            var subject = 'Contact Form Message from ' + name;
-            var mailtoLink = 'mailto:sales@aart.dev?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailBody);
-
-            document.getElementById('contactEmailLink').href = mailtoLink;
-            document.getElementById('contactSuccessMessage').style.display = 'block';
-            document.getElementById('contactSuccessMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
 </body>
