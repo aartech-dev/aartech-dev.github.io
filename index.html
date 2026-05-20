@@ -1300,7 +1300,10 @@
         var imageBasePath = 'assets/images/';
 
         fetch('products.json')
-            .then(function(response) { return response.json(); })
+            .then(function(response) {
+                if (!response.ok) { throw new Error('products.json not found'); }
+                return response.json();
+            })
             .then(function(data) {
                 productsData = data.products;
                 imageBasePath = data.image_base_path || 'assets/images/';
@@ -1309,7 +1312,7 @@
                 renderMotor();
             })
             .catch(function(error) {
-                console.error('Error loading products:', error);
+                // products.json not present - using inline fallback data
                 productsData = [
                     { id: "remora1", name: "Remora 1.2", price_gbp: 30, weight_grams: 1, images: ["Remora1_top.png", "Remora1_bot.png"], category: "speed_controller", description: "Double-sided speed controller board" },
                     { id: "remora2", name: "Remora 2", price_gbp: 39.95, weight_grams: 1, images: ["Remora2_top.png", "Remora2_bot.png"], category: "speed_controller", description: "Single-sided speed controller board" },
@@ -1736,9 +1739,9 @@
                 contact_other: 'Other Ways to Reach Us',
                 contact_email_label: 'Email us directly at:',
                 contact_community: 'Community & Resources',
-                contact_response: '<strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don't respond immediately.',
+                contact_response: '<strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don\'t respond immediately.',
                 contact_privacy: '<strong>Privacy:</strong> We do not sell or share your information.',
-                footer_copy: '© Adrian & Richard's Technologies'
+                footer_copy: '© Adrian & Richard\'s Technologies'
             },
             es: {
                 nav_home: 'Inicio', nav_products: 'Productos', nav_remora: 'Placas Remora',
@@ -1823,7 +1826,7 @@
                 contact_community: 'Comunidad y Recursos',
                 contact_response: '<strong>Tiempo de Respuesta:</strong> Normalmente respondemos en 24-48 horas. Este es un proyecto de afición, así que tenga paciencia si no respondemos de inmediato.',
                 contact_privacy: '<strong>Privacidad:</strong> No vendemos ni compartimos su información.',
-                footer_copy: '© Adrian & Richard's Technologies'
+                footer_copy: '© Adrian & Richard\'s Technologies'
             },
             pt: {
                 nav_home: 'Início', nav_products: 'Produtos', nav_remora: 'Placas Remora',
@@ -1908,7 +1911,7 @@
                 contact_community: 'Comunidade e Recursos',
                 contact_response: '<strong>Tempo de Resposta:</strong> Normalmente respondemos em 24-48 horas. Este é um projeto de hobby, então tenha paciência se não respondermos imediatamente.',
                 contact_privacy: '<strong>Privacidade:</strong> Não vendemos nem compartilhamos suas informações.',
-                footer_copy: '© Adrian & Richard's Technologies'
+                footer_copy: '© Adrian & Richard\'s Technologies'
             },
             de: {
                 nav_home: 'Start', nav_products: 'Produkte', nav_remora: 'Remora-Platinen',
@@ -1993,13 +1996,13 @@
                 contact_community: 'Community & Ressourcen',
                 contact_response: '<strong>Antwortzeit:</strong> Wir antworten normalerweise innerhalb von 24-48 Stunden. Dies ist ein Hobbyprojekt, bitte haben Sie Geduld, wenn wir nicht sofort antworten.',
                 contact_privacy: '<strong>Datenschutz:</strong> Wir verkaufen oder teilen Ihre Daten nicht.',
-                footer_copy: '© Adrian & Richard's Technologies'
+                footer_copy: '© Adrian & Richard\'s Technologies'
             },
             it: {
                 nav_home: 'Home', nav_products: 'Prodotti', nav_remora: 'Schede Remora',
                 nav_comparison: 'Confronto', nav_motor: 'Motore AART',
                 nav_order: 'Modulo Ordine', nav_contact: 'Contatti',
-                hero_sub: 'La casa dei Commutatori Elettronici Remora (eCom) per motori brushless di slot car e tecnologia di gara all'avanguardia',
+                hero_sub: 'La casa dei Commutatori Elettronici Remora (eCom) per motori brushless di slot car e tecnologia di gara all\'avanguardia',
                 hero_cta: 'Esplora i Nostri Prodotti',
                 sec_products: 'I Nostri Prodotti',
                 products_intro: 'Progettiamo e produciamo schede di controllo velocità open source (eCom) per motori brushless di slot car. Tutti i progetti hardware e le informazioni sono disponibili sul nostro',
@@ -2043,7 +2046,7 @@
                 adv_note: 'Nota: Tutti i test eseguiti indipendentemente con motore e volano da 3000Kv identici. I risultati dimostrano prestazioni superiori costanti su più metriche.',
                 sec_motor: 'Motore 22.000Kv',
                 motor_intro: 'Fornitura limitata di motori brushless altamente competitivi. Utilizzati con successo da piloti rinomati in eventi eurosport e di club senza limiti.',
-                motor_install: '<strong>Nota di Installazione:</strong> Richiede un'installazione attenta - usa un utensile rotante per rimuovere il circlip o aggiungere distanziali. Contattaci per idee di miglioramento!',
+                motor_install: '<strong>Nota di Installazione:</strong> Richiede un\'installazione attenta - usa un utensile rotante per rimuovere il circlip o aggiungere distanziali. Contattaci per idee di miglioramento!',
                 btn_ordermotors: 'Ordina Motori',
                 sec_order: 'Modulo Ordine',
                 order_intro: 'Compila il modulo sottostante per generare il tuo ordine. Puoi scaricarlo come file di testo e inviarcelo via e-mail a',
@@ -2061,7 +2064,7 @@
                 lbl_notes: 'Note Aggiuntive (Facoltativo)', ph_notes: 'Richieste speciali o domande?',
                 btn_generate: 'Genera File Ordine',
                 order_success_title: '✓ File Ordine Generato!',
-                order_success_msg: 'Il tuo ordine è stato scaricato come "AART_Order.txt". Allega questo file a un'e-mail e invialo a',
+                order_success_msg: 'Il tuo ordine è stato scaricato come "AART_Order.txt". Allega questo file a un\'e-mail e invialo a',
                 sec_contact: 'Contattaci', contact_title: 'Inviaci un Messaggio',
                 contact_intro: 'Hai una domanda o hai bisogno di assistenza? Compila il modulo sottostante e ti risponderemo il prima possibile.',
                 lbl_yourname: 'Il Tuo Nome *', lbl_youremail: 'La Tua E-mail *',
@@ -2078,7 +2081,7 @@
                 contact_community: 'Comunità e Risorse',
                 contact_response: '<strong>Tempi di Risposta:</strong> Rispondiamo tipicamente entro 24-48 ore. Questo è un progetto hobbystico, quindi sii paziente se non rispondiamo immediatamente.',
                 contact_privacy: '<strong>Privacy:</strong> Non vendiamo né condividiamo le tue informazioni.',
-                footer_copy: '© Adrian & Richard's Technologies'
+                footer_copy: '© Adrian & Richard\'s Technologies'
             }
         };
 
