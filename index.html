@@ -630,6 +630,29 @@
             }
         }
 
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            margin-left: 1.5rem;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-muted);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -649,15 +672,15 @@
                 <span class="logo-text">AART.dev</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#remora-boards">Remora Boards</a></li>
-                <li><a href="#comparison">Comparison</a></li>
-                <li><a href="#motor">AART Motor</a></li>
-                <li><a href="#ordering">Order Form</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#products" data-i18n="nav_products">Products</a></li>
+                <li><a href="#remora-boards" data-i18n="nav_remora">Remora Boards</a></li>
+                <li><a href="#comparison" data-i18n="nav_comparison">Comparison</a></li>
+                <li><a href="#motor" data-i18n="nav_motor">AART Motor</a></li>
+                <li><a href="#ordering" data-i18n="nav_order">Order Form</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
-            <button class="mobile-toggle" id="mobileToggle">☰</button>
+            <div class="lang-switcher" id="langSwitcher"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('es')">ES</button><button class="lang-btn" onclick="setLang('pt')">PT</button><button class="lang-btn" onclick="setLang('de')">DE</button><button class="lang-btn" onclick="setLang('it')">IT</button></div><button class="mobile-toggle" id="mobileToggle">☰</button>
         </div>
     </nav>
 
@@ -666,48 +689,48 @@
         <div class="hero-content">
             <img src="assets/images/aart-logo-transparent-invert.png" alt="AART Logo" style="width: 300px; height: auto; margin-bottom: 2rem;">
             <h1>Adrian & Richard's <span class="gradient-text">Technologies</span></h1>
-            <p>The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
-            <a href="#products" class="cta-button">Explore Our Products</a>
+            <p data-i18n="hero_sub">The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology</p>
+            <a href="#products" class="cta-button" data-i18n="hero_cta">Explore Our Products</a>
         </div>
     </section>
 
     <!-- Products Overview -->
     <section id="products">
-        <h2><span class="gradient-text">Our Products</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_products">Our Products</span></h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-muted);">
-            We design and manufacture open-source speed controller boards (eComs) for slot car brushless motors. All hardware designs and information are available on our <a href="https://github.com/adrianblakey/slot-car-ecom/wiki/Getting-Started" style="color: var(--primary);">wiki</a>.
+            <span data-i18n="products_intro">We design and manufacture open-source speed controller boards (eComs) for slot car brushless motors. All hardware designs and information are available on our</span> <a href="https://github.com/adrianblakey/slot-car-ecom/wiki/Getting-Started" style="color: var(--primary);">wiki</a>.
         </p>
 
         <div class="product-grid">
             <div class="product-card">
-                <h3>Speed Controller Boards</h3>
-                <p>Electronic commutators (eComs) for brushless motors in slot cars. Fast, robust, and flexible.</p>
+                <h3 data-i18n="card_esc_title">Speed Controller Boards</h3>
+                <p data-i18n="card_esc_desc">Electronic commutators (eComs) for brushless motors in slot cars. Fast, robust, and flexible.</p>
                 <ul class="feature-list">
-                    <li>Remora 1.2 - Double-sided board</li>
-                    <li>Remora 2 - Single-sided board</li>
-                    <li>Remora 1/g - Genesis board (MidAmerica only)</li>
-                    <li>Remora IT - SLOT.IT exclusive</li>
+                    <li data-i18n="esc_li1">Remora 1.2 - Double-sided board</li>
+                    <li data-i18n="esc_li2">Remora 2 - Single-sided board</li>
+                    <li data-i18n="esc_li3">Remora 1/g - Genesis board (MidAmerica only)</li>
+                    <li data-i18n="esc_li4">Remora IT - SLOT.IT exclusive</li>
                 </ul>
             </div>
 
             <div class="product-card">
-                <h3>WiFi Link Programmer</h3>
-                <p>Essential tool for programming and configuring your Remora boards.</p>
+                <h3 data-i18n="card_wifi_title">WiFi Link Programmer</h3>
+                <p data-i18n="card_wifi_desc">Essential tool for programming and configuring your Remora boards.</p>
                 <ul class="feature-list">
-                    <li>Programs Remora 1.2 and Remora 2</li>
-                    <li>Set all eCom parameters wirelessly</li>
-                    <li>Complete kit or individual parts</li>
-                    <li>One programmer serves all boards</li>
+                    <li data-i18n="wifi_li1">Programs Remora 1.2 and Remora 2</li>
+                    <li data-i18n="wifi_li2">Set all eCom parameters wirelessly</li>
+                    <li data-i18n="wifi_li3">Complete kit or individual parts</li>
+                    <li data-i18n="wifi_li4">One programmer serves all boards</li>
                 </ul>
             </div>
 
             <div class="product-card">
                 <h3>22,000Kv Motor</h3>
-                <p>High-performance brushless motors for competitive slot car racing.</p>
+                <p data-i18n="card_motor_desc">High-performance brushless motors for competitive slot car racing.</p>
                 <ul class="feature-list">
                     <li>1105 size, 6 magnet design</li>
-                    <li>Proven in eurosport racing</li>
-                    <li>Runs perfectly with Remora 1.2</li>
+                    <li data-i18n="motor_li2">Proven in eurosport racing</li>
+                    <li data-i18n="motor_li3">Runs perfectly with Remora 1.2</li>
                     <li>13.68mm diameter, 1.5mm shaft</li>
                 </ul>
             </div>
@@ -716,9 +739,9 @@
 
     <!-- Remora Boards -->
     <section id="remora-boards">
-        <h2><span class="gradient-text">Remora Speed Controller Boards</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_remora">Remora Speed Controller Boards</span></h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem;">
-            The world's best electronic commutators (eComs). <strong>Fastest, cheapest, most robust, and most flexible</strong> speed controllers for slot car brushless motors.
+            <span data-i18n="remora_intro">The world's best electronic commutators (eComs).</span> <strong data-i18n="remora_intro_bold">Fastest, cheapest, most robust, and most flexible</strong> <span data-i18n="remora_intro2">speed controllers for slot car brushless motors.</span>
         </p>
 
         <div class="product-grid" id="speedControllerGrid">
@@ -726,28 +749,28 @@
         </div>
 
         <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
-            <h3>Open Source Technology</h3>
+            <h3 data-i18n="oss_title">Open Source Technology</h3>
             <p style="color: var(--text-muted); margin: 1rem 0 2rem;">
-                All hardware designs are open source. Firmware uses ESCape32 - exceptional code for Electronic Speed Controllers.
+                <span data-i18n="oss_desc">All hardware designs are open source. Firmware uses ESCape32 - exceptional code for Electronic Speed Controllers.</span>
             </p>
-            <a href="https://github.com/adrianblakey/slot-car-ecom" class="button" style="margin-right: 1rem;">GitHub Repository</a>
-            <a href="https://github.com/adrianblakey/slot-car-ecom/wiki" class="button">View Wiki</a>
+            <a href="https://github.com/adrianblakey/slot-car-ecom" class="button" style="margin-right: 1rem;" data-i18n="btn_github">GitHub Repository</a>
+            <a href="https://github.com/adrianblakey/slot-car-ecom/wiki" class="button" data-i18n="btn_wiki">View Wiki</a>
         </div>
     </section>
 
     <!-- Comparison Section -->
     <section id="comparison">
-        <h2><span class="gradient-text">Performance Comparison</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_comparison">Performance Comparison</span></h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: var(--text-muted);">
-            Independent testing comparing Remora 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.
+            <span data-i18n="comparison_intro">Independent testing comparing Remora 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.</span>
         </p>
 
-        <h3 style="text-align: center; margin-bottom: 2rem;">Technical Specifications</h3>
+        <h3 style="text-align: center; margin-bottom: 2rem;" data-i18n="tbl_specs">Technical Specifications</h3>
         <div class="comparison-table">
             <table>
                 <thead>
                     <tr>
-                        <th>Specification</th>
+                        <th data-i18n="col_spec">Specification</th>
                         <th class="remora-col">Remora 1</th>
                         <th>Raivis Edition A</th>
                         <th>Latvian V2.10</th>
@@ -757,7 +780,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Weight</strong></td>
+                        <td><strong data-i18n="spec_weight">Weight</strong></td>
                         <td class="remora-col highlight-win">1.51g</td>
                         <td>1.90g</td>
                         <td>2.35g</td>
@@ -765,7 +788,7 @@
                         <td>2.00g</td>
                     </tr>
                     <tr>
-                        <td><strong>PCB Area</strong></td>
+                        <td><strong data-i18n="spec_pcbarea">PCB Area</strong></td>
                         <td class="remora-col highlight-win">380mm²</td>
                         <td>437mm²</td>
                         <td>532mm²</td>
@@ -773,15 +796,15 @@
                         <td>394mm²</td>
                     </tr>
                     <tr>
-                        <td><strong>Board Type</strong></td>
+                        <td><strong data-i18n="spec_boardtype">Board Type</strong></td>
                         <td class="remora-col">Double-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
-                        <td>Single-sided</td>
+                        <td data-i18n="val_singlesided">Single-sided</td>
+                        <td data-i18n="val_singlesided">Single-sided</td>
+                        <td data-i18n="val_singlesided">Single-sided</td>
+                        <td data-i18n="val_singlesided">Single-sided</td>
                     </tr>
                     <tr>
-                        <td><strong>Thickness</strong></td>
+                        <td><strong data-i18n="spec_thickness">Thickness</strong></td>
                         <td class="remora-col">3.09mm</td>
                         <td>2.99mm</td>
                         <td>2.87mm</td>
@@ -789,7 +812,7 @@
                         <td>3.92mm</td>
                     </tr>
                     <tr>
-                        <td><strong>Reverse Polarity Protection</strong></td>
+                        <td><strong data-i18n="spec_revpol">Reverse Polarity Protection</strong></td>
                         <td class="remora-col highlight-win">Control & Power circuits</td>
                         <td>Control & Power circuits</td>
                         <td>Control & Power circuits</td>
@@ -797,7 +820,7 @@
                         <td>Control only</td>
                     </tr>
                     <tr>
-                        <td><strong>Auto Brake</strong></td>
+                        <td><strong data-i18n="spec_autobrake">Auto Brake</strong></td>
                         <td class="remora-col">No</td>
                         <td>No</td>
                         <td>Yes</td>
@@ -805,7 +828,7 @@
                         <td>No</td>
                     </tr>
                     <tr>
-                        <td><strong>Output MOSFETs Resistance</strong></td>
+                        <td><strong data-i18n="spec_mosfet">Output MOSFETs Resistance</strong></td>
                         <td class="remora-col highlight-win">1.2mΩ (L0302A)</td>
                         <td>2.5mΩ (CSD17575) / 5.5mΩ (CSD25404)</td>
                         <td>4.2mΩ (CSD16340) / 5.5mΩ (CSD25404)</td>
@@ -813,7 +836,7 @@
                         <td>5-6.1mΩ (CSD16340) / 5.5mΩ (CSD25404)</td>
                     </tr>
                     <tr>
-                        <td><strong>Capacitance</strong></td>
+                        <td><strong data-i18n="spec_cap">Capacitance</strong></td>
                         <td class="remora-col">67µF (10× 0805)</td>
                         <td>53µF (3× 1207)</td>
                         <td>68µF (5× 1206)</td>
@@ -824,12 +847,12 @@
             </table>
         </div>
 
-        <h3 style="text-align: center; margin: 3rem 0 2rem;">Performance Testing (3000Kv Motor)</h3>
+        <h3 style="text-align: center; margin: 3rem 0 2rem;" data-i18n="tbl_perf">Performance Testing (3000Kv Motor)</h3>
         <div class="comparison-table">
             <table>
                 <thead>
                     <tr>
-                        <th>Performance Metric</th>
+                        <th data-i18n="col_metric">Performance Metric</th>
                         <th class="remora-col">Remora 1</th>
                         <th>Raivis Edition A</th>
                         <th>Latvian V2.10</th>
@@ -839,7 +862,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Start Voltage</strong></td>
+                        <td><strong data-i18n="perf_startvolt">Start Voltage</strong></td>
                         <td class="remora-col highlight-win">1.505V</td>
                         <td>2.348V</td>
                         <td>2.193V</td>
@@ -847,7 +870,7 @@
                         <td>1.957V</td>
                     </tr>
                     <tr>
-                        <td><strong>Stop Voltage</strong></td>
+                        <td><strong data-i18n="perf_stopvolt">Stop Voltage</strong></td>
                         <td class="remora-col highlight-win">1.499V</td>
                         <td>2.02V</td>
                         <td>1.95V</td>
@@ -855,7 +878,7 @@
                         <td>1.955V</td>
                     </tr>
                     <tr>
-                        <td><strong>Frequency @ 10V</strong></td>
+                        <td><strong data-i18n="perf_freq">Frequency @ 10V</strong></td>
                         <td class="remora-col">3.0303kHz (T=1)<br>3.4722kHz (T=31)</td>
                         <td>3.4602kHz</td>
                         <td>3.4247kHz</td>
@@ -863,7 +886,7 @@
                         <td>3.4130kHz</td>
                     </tr>
                     <tr>
-                        <td><strong>No Load Current</strong></td>
+                        <td><strong data-i18n="perf_noload">No Load Current</strong></td>
                         <td class="remora-col highlight-win">220mA (T=1)<br>421mA (T=31)</td>
                         <td>457mA</td>
                         <td>430mA</td>
@@ -871,7 +894,7 @@
                         <td>380mA</td>
                     </tr>
                     <tr>
-                        <td><strong>Initial Delay (Start)</strong></td>
+                        <td><strong data-i18n="perf_delay">Initial Delay (Start)</strong></td>
                         <td class="remora-col highlight-win">6ms</td>
                         <td>23ms</td>
                         <td>23ms</td>
@@ -879,15 +902,15 @@
                         <td>5ms</td>
                     </tr>
                     <tr>
-                        <td><strong>Time to Proper Rotation</strong></td>
+                        <td><strong data-i18n="perf_rotation">Time to Proper Rotation</strong></td>
                         <td class="remora-col highlight-win">30ms</td>
                         <td>75ms</td>
                         <td>68ms</td>
                         <td>68ms</td>
-                        <td>Would not start</td>
+                        <td data-i18n="val_nostart">Would not start</td>
                     </tr>
                     <tr>
-                        <td><strong>Peak Current (Start)</strong></td>
+                        <td><strong data-i18n="perf_peak">Peak Current (Start)</strong></td>
                         <td class="remora-col highlight-win">14A</td>
                         <td>20A</td>
                         <td>20A</td>
@@ -900,25 +923,25 @@
 
         <div style="max-width: 900px; margin: 3rem auto;">
             <div style="padding: 2rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
-                <h3 style="margin-top: 0; color: var(--primary);">Key Advantages</h3>
+                <h3 style="margin-top: 0; color: var(--primary);" data-i18n="adv_title">Key Advantages</h3>
                 <ul class="feature-list">
-                    <li><strong>Lightest:</strong> At just 1.51g, Remora 1 is the lightest controller tested</li>
-                    <li><strong>Smallest footprint:</strong> 380mm² PCB area - most compact design</li>
-                    <li><strong>Fastest starting:</strong> 6ms initial delay and 30ms to proper rotation</li>
-                    <li><strong>Lowest operating voltage:</strong> Starts reliably at just 1.5V</li>
-                    <li><strong>Best efficiency:</strong> Lower no-load current and superior MOSFET resistance (1.2mΩ)</li>
-                    <li><strong>Most controlled start:</strong> 14A peak current vs 20A+ for competitors</li>
+                    <li data-i18n="adv_1"><strong>Lightest:</strong> At just 1.51g, Remora 1 is the lightest controller tested</li>
+                    <li data-i18n="adv_2"><strong>Smallest footprint:</strong> 380mm² PCB area - most compact design</li>
+                    <li data-i18n="adv_3"><strong>Fastest starting:</strong> 6ms initial delay and 30ms to proper rotation</li>
+                    <li data-i18n="adv_4"><strong>Lowest operating voltage:</strong> Starts reliably at just 1.5V</li>
+                    <li data-i18n="adv_5"><strong>Best efficiency:</strong> Lower no-load current and superior MOSFET resistance (1.2mΩ)</li>
+                    <li data-i18n="adv_6"><strong>Most controlled start:</strong> 14A peak current vs 20A+ for competitors</li>
                 </ul>
-                <p class="comparison-note">Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics.</p>
+                <p class="comparison-note" data-i18n="adv_note">Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics.</p>
             </div>
         </div>
     </section>
 
     <!-- AART Motor -->
     <section id="motor">
-        <h2><span class="gradient-text">22,000Kv Motor</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_motor">22,000Kv Motor</span></h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-muted);">
-            Limited supply of highly competitive brushless motors. Used successfully by well-known racers in eurosport and unlimited club racing events.
+            <span data-i18n="motor_intro">Limited supply of highly competitive brushless motors. Used successfully by well-known racers in eurosport and unlimited club racing events.</span>
         </p>
 
         <div id="motorProduct" class="product-grid">
@@ -926,42 +949,42 @@
         </div>
 
         <div style="max-width: 800px; margin: 2rem auto; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 8px;">
-            <p><strong>Installation Note:</strong> Requires careful installation - use a dremel wheel to grind off circlip or add spacers. Contact us for improvement ideas!</p>
+            <p data-i18n="motor_install"><strong>Installation Note:</strong> Requires careful installation - use a dremel wheel to grind off circlip or add spacers. Contact us for improvement ideas!</p>
         </div>
 
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="#ordering" class="cta-button">Order Motors</a>
+            <a href="#ordering" class="cta-button" data-i18n="btn_ordermotors">Order Motors</a>
         </div>
     </section>
 
     <!-- Ordering -->
     <section id="ordering">
-        <h2><span class="gradient-text">Order Form</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_order">Order Form</span></h2>
         
         <div class="contact-info">
-            <p style="text-align: center; margin-bottom: 2rem;">Fill out the form below to generate your order. You can download it as a text file and email it to us at <a href="mailto:sales@aart.dev" style="color: var(--primary);">sales@aart.dev</a></p>
+            <p style="text-align: center; margin-bottom: 2rem;"><span data-i18n="order_intro">Fill out the form below to generate your order. You can download it as a text file and email it to us at</span> <a href="mailto:sales@aart.dev" style="color: var(--primary);">sales@aart.dev</a></p>
 
             <div id="orderForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="fullName">Full Name *</label>
+                        <label for="fullName" data-i18n="lbl_fullname">Full Name *</label>
                         <input type="text" id="fullName" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
+                        <label for="email" data-i18n="lbl_email">Email Address *</label>
                         <input type="email" id="email" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
+                        <label for="phone" data-i18n="lbl_phone">Phone Number *</label>
                         <input type="tel" id="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="shippingCountry">Shipping Country *</label>
+                        <label for="shippingCountry" data-i18n="lbl_country">Shipping Country *</label>
                         <select id="shippingCountry" required>
-                            <option value="">Select country</option>
+                            <option value="" data-i18n="opt_selectcountry">Select country</option>
 
                             <!-- Priority countries -->
                             <option value="UK">United Kingdom</option>
@@ -1057,24 +1080,24 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="shippingPreference">Shipping Preference *</label>
+                        <label for="shippingPreference" data-i18n="lbl_shipping">Shipping Preference *</label>
                         <select id="shippingPreference" required>
-                            <option value="">Select shipping method</option>
-                            <option value="special">Special Delivery</option>
-                            <option value="first">First Class</option>
-                            <option value="second">Second Class</option>
-                            <option value="tracked">Tracked</option>
-                            <option value="signed">Signed For</option>
+                            <option value="" data-i18n="opt_selectshipping">Select shipping method</option>
+                            <option value="special" data-i18n="ship_special">Special Delivery</option>
+                            <option value="first" data-i18n="ship_first">First Class</option>
+                            <option value="second" data-i18n="ship_second">Second Class</option>
+                            <option value="tracked" data-i18n="ship_tracked">Tracked</option>
+                            <option value="signed" data-i18n="ship_signed">Signed For</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group" id="tariffCodeGroup" style="display: none;">
                     <label>
-                        Tariff/HS Code (for customs declaration)
+                        <span data-i18n="lbl_tariff">Tariff/HS Code (for customs declaration)</span>
                         <span class="info-icon">?
                             <div class="info-popup">
-                                <h5>About Tariff Codes</h5>
+                                <h5 data-i18n="tariff_title">About Tariff Codes</h5>
                                 <p><strong>Default codes by region:</strong></p>
                                 <p><strong>Most countries:</strong> 8504 4087 90 - Static converters/controllers</p>
                                 <p><strong>Brazil/Mercosul:</strong> NCM 95030091 - Toy accessories</p>
@@ -1108,15 +1131,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="shippingAddress">Shipping Address *</label>
+                    <label for="shippingAddress" data-i18n="lbl_address">Shipping Address *</label>
                     <textarea id="shippingAddress" required placeholder="Enter your complete shipping address"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Products *</label>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Select the products you'd like to order:</p>
+                    <label data-i18n="lbl_products">Products *</label>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><span data-i18n="products_prompt">Select the products you'd like to order:</span></p>
                     
-                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Speed Controller Boards</h4>
+                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;" data-i18n="grp_esc">Speed Controller Boards</h4>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="remora1" value="Remora 1.2">
@@ -1130,7 +1153,7 @@
                         </div>
                     </div>
 
-                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">WiFi Link Programmer</h4>
+                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;" data-i18n="grp_wifi">WiFi Link Programmer</h4>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifilink" value="WiFi Link">
@@ -1164,7 +1187,7 @@
                         </div>
                     </div>
 
-                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Motor</h4>
+                    <h4 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1.1rem;" data-i18n="grp_motor">Motor</h4>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="motor_22k" value="22,000Kv Motor">
@@ -1175,17 +1198,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="additionalNotes">Additional Notes (Optional)</label>
-                    <textarea id="additionalNotes" placeholder="Any special requests or questions?"></textarea>
+                    <label for="additionalNotes" data-i18n="lbl_notes">Additional Notes (Optional)</label>
+                    <textarea id="additionalNotes" data-i18n-placeholder="ph_notes" placeholder="Any special requests or questions?"></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 2rem;">
-                    <button onclick="generateOrder()" class="cta-button">Generate Order File</button>
+                    <button onclick="generateOrder()" class="cta-button" data-i18n="btn_generate">Generate Order File</button>
                 </div>
 
                 <div id="successMessage" style="display: none;" class="success-message">
-                    <h4>✓ Order File Generated!</h4>
-                    <p>Your order has been downloaded as "AART_Order.txt". Please attach this file to an email and send it to <a href="mailto:sales@aart.dev" style="color: #4ade80; text-decoration: underline;">sales@aart.dev</a></p>
+                    <h4 data-i18n="order_success_title">✓ Order File Generated!</h4>
+                    <p><span data-i18n="order_success_msg">Your order has been downloaded as "AART_Order.txt". Please attach this file to an email and send it to</span> <a href="mailto:sales@aart.dev" style="color: #4ade80; text-decoration: underline;">sales@aart.dev</a></p>
                 </div>
             </div>
         </div>
@@ -1193,63 +1216,63 @@
 
     <!-- Contact -->
     <section id="contact">
-        <h2><span class="gradient-text">Contact Us</span></h2>
+        <h2><span class="gradient-text" data-i18n="sec_contact">Contact Us</span></h2>
         
         <div class="contact-info">
-            <h3>Send Us a Message</h3>
-            <p style="margin-bottom: 2rem;">Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</p>
+            <h3 data-i18n="contact_title">Send Us a Message</h3>
+            <p style="margin-bottom: 2rem;"><span data-i18n="contact_intro">Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</span></p>
             
             <div id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="contactName">Your Name *</label>
+                        <label for="contactName" data-i18n="lbl_yourname">Your Name *</label>
                         <input type="text" id="contactName" required>
                     </div>
                     <div class="form-group">
-                        <label for="contactEmail">Your Email *</label>
+                        <label for="contactEmail" data-i18n="lbl_youremail">Your Email *</label>
                         <input type="email" id="contactEmail" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="contactPhone">Phone Number</label>
+                        <label for="contactPhone" data-i18n="lbl_phone_opt">Phone Number</label>
                         <input type="tel" id="contactPhone">
                     </div>
                     <div class="form-group">
-                        <label for="contactWhatsApp">WhatsApp Number</label>
+                        <label for="contactWhatsApp" data-i18n="lbl_whatsapp">WhatsApp Number</label>
                         <input type="tel" id="contactWhatsApp" placeholder="Include country code (e.g., +44 7700 900000)">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="contactMessage">Your Message *</label>
-                    <textarea id="contactMessage" required placeholder="How can we help you?" style="min-height: 150px;"></textarea>
+                    <label for="contactMessage" data-i18n="lbl_message">Your Message *</label>
+                    <textarea id="contactMessage" required data-i18n-placeholder="ph_message" placeholder="How can we help you?" style="min-height: 150px;"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="contactAttachments">Attachments (optional)</label>
+                    <label for="contactAttachments" data-i18n="lbl_attachments">Attachments (optional)</label>
                     <input type="file" id="contactAttachments" multiple style="padding: 0.5rem;">
-                    <small style="display: block; margin-top: 0.5rem; color: var(--text-muted);">You can attach images, documents, or other files (max 10MB total)</small>
+                    <small style="display: block; margin-top: 0.5rem; color: var(--text-muted);"><span data-i18n="attach_hint">You can attach images, documents, or other files (max 10MB total)</span></small>
                 </div>
 
                 <div style="text-align: center; margin-top: 2rem;">
-                    <button onclick="sendContactMessage()" class="cta-button">Send Message</button>
+                    <button onclick="sendContactMessage()" class="cta-button" data-i18n="btn_send">Send Message</button>
                 </div>
 
                 <div id="contactSuccessMessage" style="display: none;" class="success-message">
-                    <h4>✓ Message Ready!</h4>
-                    <p>Your message has been prepared. Click the button below to send it via your email client.</p>
+                    <h4 data-i18n="contact_success_title">✓ Message Ready!</h4>
+                    <p><span data-i18n="contact_success_msg">Your message has been prepared. Click the button below to send it via your email client.</span></p>
                     <div style="margin-top: 1rem;">
-                        <a id="contactEmailLink" href="#" class="cta-button" style="display: inline-block; text-decoration: none;">Open Email Client</a>
+                        <a id="contactEmailLink" href="#" class="cta-button" style="display: inline-block; text-decoration: none;" data-i18n="btn_email_client">Open Email Client</a>
                     </div>
                 </div>
             </div>
 
-            <h3 style="margin-top: 3rem;">Other Ways to Reach Us</h3>
-            <p>Email us directly at: <a href="mailto:sales@aart.dev" style="color: var(--primary);">sales@aart.dev</a></p>
+            <h3 style="margin-top: 3rem;" data-i18n="contact_other">Other Ways to Reach Us</h3>
+            <p><span data-i18n="contact_email_label">Email us directly at:</span> <a href="mailto:sales@aart.dev" style="color: var(--primary);">sales@aart.dev</a></p>
 
-            <h3>Community & Resources</h3>
+            <h3 data-i18n="contact_community">Community & Resources</h3>
             <ul class="feature-list">
                 <li>Join the <a href="https://discord.com/channels/1103745257046278144/1151565789984469144" style="color: var(--primary);">ESCape32 Discord server</a> - slot car channel</li>
                 <li><a href="https://github.com/adrianblakey/slot-car-ecom" style="color: var(--primary);">GitHub Repository</a></li>
@@ -1258,8 +1281,8 @@
             </ul>
 
             <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
-                <p><strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don't respond immediately.</p>
-                <p style="margin-top: 0.5rem;"><strong>Privacy:</strong> We do not sell or share your information.</p>
+                <p data-i18n="contact_response"><strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don't respond immediately.</p>
+                <p style="margin-top: 0.5rem;" data-i18n="contact_privacy"><strong>Privacy:</strong> We do not sell or share your information.</p>
             </div>
         </div>
     </section>
@@ -1268,7 +1291,7 @@
     <footer>
         <p>Project maintained by <a href="https://github.com/adrianblakey">adrianblakey</a></p>
         <p style="margin-top: 0.5rem;">Hosted on GitHub Pages</p>
-        <p style="margin-top: 1rem; font-size: 0.85rem;">© Adrian & Richard's Technologies</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;" data-i18n="footer_copy">© Adrian & Richard's Technologies</p>
     </footer>
 
     <script>
@@ -1629,6 +1652,471 @@
             document.getElementById('contactSuccessMessage').style.display = 'block';
             document.getElementById('contactSuccessMessage').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
+
+        // ── i18n ─────────────────────────────────────────────────────────────
+        var translations = {
+            en: {
+                nav_home: 'Home', nav_products: 'Products', nav_remora: 'Remora Boards',
+                nav_comparison: 'Comparison', nav_motor: 'AART Motor',
+                nav_order: 'Order Form', nav_contact: 'Contact',
+                hero_sub: 'The home of the Remora Electronic Commutators (eCom) for slot car brushless motors and cutting-edge racing technology',
+                hero_cta: 'Explore Our Products',
+                sec_products: 'Our Products',
+                products_intro: 'We design and manufacture open-source speed controller boards (eComs) for slot car brushless motors. All hardware designs and information are available on our',
+                card_esc_title: 'Speed Controller Boards',
+                card_esc_desc: 'Electronic commutators (eComs) for brushless motors in slot cars. Fast, robust, and flexible.',
+                esc_li1: 'Remora 1.2 - Double-sided board', esc_li2: 'Remora 2 - Single-sided board',
+                esc_li3: 'Remora 1/g - Genesis board (MidAmerica only)', esc_li4: 'Remora IT - SLOT.IT exclusive',
+                card_wifi_title: 'WiFi Link Programmer',
+                card_wifi_desc: 'Essential tool for programming and configuring your Remora boards.',
+                wifi_li1: 'Programs Remora 1.2 and Remora 2', wifi_li2: 'Set all eCom parameters wirelessly',
+                wifi_li3: 'Complete kit or individual parts', wifi_li4: 'One programmer serves all boards',
+                card_motor_desc: 'High-performance brushless motors for competitive slot car racing.',
+                motor_li2: 'Proven in eurosport racing', motor_li3: 'Runs perfectly with Remora 1.2',
+                sec_remora: 'Remora Speed Controller Boards',
+                remora_intro: "The world's best electronic commutators (eComs).",
+                remora_intro_bold: 'Fastest, cheapest, most robust, and most flexible',
+                remora_intro2: 'speed controllers for slot car brushless motors.',
+                oss_title: 'Open Source Technology',
+                oss_desc: 'All hardware designs are open source. Firmware uses ESCape32 - exceptional code for Electronic Speed Controllers.',
+                btn_github: 'GitHub Repository', btn_wiki: 'View Wiki',
+                sec_comparison: 'Performance Comparison',
+                comparison_intro: 'Independent testing comparing Remora 1 against competitor speed controller boards. All tests performed with a 3000Kv motor under identical conditions.',
+                tbl_specs: 'Technical Specifications', col_spec: 'Specification',
+                spec_weight: 'Weight', spec_pcbarea: 'PCB Area', spec_boardtype: 'Board Type',
+                val_doublesided: 'Double-sided', val_singlesided: 'Single-sided',
+                spec_thickness: 'Thickness', spec_revpol: 'Reverse Polarity Protection',
+                spec_autobrake: 'Auto Brake', spec_mosfet: 'Output MOSFETs Resistance',
+                spec_cap: 'Capacitance',
+                tbl_perf: 'Performance Testing (3000Kv Motor)', col_metric: 'Performance Metric',
+                perf_startvolt: 'Start Voltage', perf_stopvolt: 'Stop Voltage',
+                perf_freq: 'Frequency @ 10V', perf_noload: 'No Load Current',
+                perf_delay: 'Initial Delay (Start)', perf_rotation: 'Time to Proper Rotation',
+                perf_peak: 'Peak Current (Start)', val_nostart: 'Would not start',
+                adv_title: 'Key Advantages',
+                adv_1: '<strong>Lightest:</strong> At just 1.51g, Remora 1 is the lightest controller tested',
+                adv_2: '<strong>Smallest footprint:</strong> 380mm² PCB area - most compact design',
+                adv_3: '<strong>Fastest starting:</strong> 6ms initial delay and 30ms to proper rotation',
+                adv_4: '<strong>Lowest operating voltage:</strong> Starts reliably at just 1.5V',
+                adv_5: '<strong>Best efficiency:</strong> Lower no-load current and superior MOSFET resistance (1.2mΩ)',
+                adv_6: '<strong>Most controlled start:</strong> 14A peak current vs 20A+ for competitors',
+                adv_note: 'Note: All testing performed independently with identical 3000Kv motor and flywheel configuration. Results demonstrate consistent superior performance across multiple metrics.',
+                sec_motor: '22,000Kv Motor',
+                motor_intro: 'Limited supply of highly competitive brushless motors. Used successfully by well-known racers in eurosport and unlimited club racing events.',
+                motor_install: '<strong>Installation Note:</strong> Requires careful installation - use a dremel wheel to grind off circlip or add spacers. Contact us for improvement ideas!',
+                btn_ordermotors: 'Order Motors',
+                sec_order: 'Order Form',
+                order_intro: 'Fill out the form below to generate your order. You can download it as a text file and email it to us at',
+                lbl_fullname: 'Full Name *', lbl_email: 'Email Address *', lbl_phone: 'Phone Number *',
+                lbl_country: 'Shipping Country *', opt_selectcountry: 'Select country',
+                lbl_shipping: 'Shipping Preference *', opt_selectshipping: 'Select shipping method',
+                ship_special: 'Special Delivery', ship_first: 'First Class', ship_second: 'Second Class',
+                ship_tracked: 'Tracked', ship_signed: 'Signed For',
+                lbl_tariff: 'Tariff/HS Code (for customs declaration)',
+                tariff_title: 'About Tariff Codes',
+                lbl_address: 'Shipping Address *',
+                lbl_products: 'Products *',
+                products_prompt: "Select the products you'd like to order:",
+                grp_esc: 'Speed Controller Boards', grp_wifi: 'WiFi Link Programmer', grp_motor: 'Motor',
+                lbl_notes: 'Additional Notes (Optional)', ph_notes: 'Any special requests or questions?',
+                btn_generate: 'Generate Order File',
+                order_success_title: '✓ Order File Generated!',
+                order_success_msg: 'Your order has been downloaded as "AART_Order.txt". Please attach this file to an email and send it to',
+                sec_contact: 'Contact Us', contact_title: 'Send Us a Message',
+                contact_intro: "Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.",
+                lbl_yourname: 'Your Name *', lbl_youremail: 'Your Email *',
+                lbl_phone_opt: 'Phone Number', lbl_whatsapp: 'WhatsApp Number',
+                lbl_message: 'Your Message *', ph_message: 'How can we help you?',
+                lbl_attachments: 'Attachments (optional)',
+                attach_hint: 'You can attach images, documents, or other files (max 10MB total)',
+                btn_send: 'Send Message',
+                contact_success_title: '✓ Message Ready!',
+                contact_success_msg: 'Your message has been prepared. Click the button below to send it via your email client.',
+                btn_email_client: 'Open Email Client',
+                contact_other: 'Other Ways to Reach Us',
+                contact_email_label: 'Email us directly at:',
+                contact_community: 'Community & Resources',
+                contact_response: '<strong>Response Time:</strong> We typically respond within 24-48 hours. This is a hobby project, so please be patient if we don't respond immediately.',
+                contact_privacy: '<strong>Privacy:</strong> We do not sell or share your information.',
+                footer_copy: '© Adrian & Richard's Technologies'
+            },
+            es: {
+                nav_home: 'Inicio', nav_products: 'Productos', nav_remora: 'Placas Remora',
+                nav_comparison: 'Comparativa', nav_motor: 'Motor AART',
+                nav_order: 'Formulario de Pedido', nav_contact: 'Contacto',
+                hero_sub: 'El hogar de los Conmutadores Electrónicos Remora (eCom) para motores sin escobillas de coches de ranura y tecnología de carreras de vanguardia',
+                hero_cta: 'Explorar Nuestros Productos',
+                sec_products: 'Nuestros Productos',
+                products_intro: 'Diseñamos y fabricamos placas controladoras de velocidad de código abierto (eComs) para motores sin escobillas de coches de ranura. Todos los diseños de hardware e información están disponibles en nuestra',
+                card_esc_title: 'Placas Controladoras de Velocidad',
+                card_esc_desc: 'Conmutadores electrónicos (eComs) para motores sin escobillas en coches de ranura. Rápidos, robustos y flexibles.',
+                esc_li1: 'Remora 1.2 - Placa de doble cara', esc_li2: 'Remora 2 - Placa de una cara',
+                esc_li3: 'Remora 1/g - Placa Genesis (solo MidAmerica)', esc_li4: 'Remora IT - Exclusivo SLOT.IT',
+                card_wifi_title: 'Programador WiFi Link',
+                card_wifi_desc: 'Herramienta esencial para programar y configurar sus placas Remora.',
+                wifi_li1: 'Programa Remora 1.2 y Remora 2', wifi_li2: 'Configure todos los parámetros del eCom de forma inalámbrica',
+                wifi_li3: 'Kit completo o piezas individuales', wifi_li4: 'Un programador para todas las placas',
+                card_motor_desc: 'Motores sin escobillas de alto rendimiento para carreras competitivas de coches de ranura.',
+                motor_li2: 'Probado en carreras eurosport', motor_li3: 'Funciona perfectamente con Remora 1.2',
+                sec_remora: 'Placas Controladoras de Velocidad Remora',
+                remora_intro: 'Los mejores conmutadores electrónicos (eComs) del mundo.',
+                remora_intro_bold: 'Los más rápidos, económicos, robustos y flexibles',
+                remora_intro2: 'controladores de velocidad para motores sin escobillas de coches de ranura.',
+                oss_title: 'Tecnología de Código Abierto',
+                oss_desc: 'Todos los diseños de hardware son de código abierto. El firmware utiliza ESCape32 - código excepcional para Controladores Electrónicos de Velocidad.',
+                btn_github: 'Repositorio GitHub', btn_wiki: 'Ver Wiki',
+                sec_comparison: 'Comparativa de Rendimiento',
+                comparison_intro: 'Pruebas independientes comparando Remora 1 con placas competidoras. Todas las pruebas realizadas con un motor de 3000Kv en condiciones idénticas.',
+                tbl_specs: 'Especificaciones Técnicas', col_spec: 'Especificación',
+                spec_weight: 'Peso', spec_pcbarea: 'Área de PCB', spec_boardtype: 'Tipo de Placa',
+                val_doublesided: 'Doble cara', val_singlesided: 'Una cara',
+                spec_thickness: 'Grosor', spec_revpol: 'Protección de Polaridad Inversa',
+                spec_autobrake: 'Freno Automático', spec_mosfet: 'Resistencia de MOSFETs de Salida',
+                spec_cap: 'Capacitancia',
+                tbl_perf: 'Pruebas de Rendimiento (Motor 3000Kv)', col_metric: 'Métrica de Rendimiento',
+                perf_startvolt: 'Tensión de Arranque', perf_stopvolt: 'Tensión de Parada',
+                perf_freq: 'Frecuencia @ 10V', perf_noload: 'Corriente en Vacío',
+                perf_delay: 'Retardo Inicial (Arranque)', perf_rotation: 'Tiempo hasta Rotación Correcta',
+                perf_peak: 'Corriente Pico (Arranque)', val_nostart: 'No arrancó',
+                adv_title: 'Ventajas Clave',
+                adv_1: '<strong>El más ligero:</strong> Con solo 1,51g, Remora 1 es el controlador más ligero probado',
+                adv_2: '<strong>Menor huella:</strong> Área de PCB de 380mm² - diseño más compacto',
+                adv_3: '<strong>Arranque más rápido:</strong> 6ms de retardo inicial y 30ms hasta rotación correcta',
+                adv_4: '<strong>Tensión de operación más baja:</strong> Arranca de forma fiable a solo 1,5V',
+                adv_5: '<strong>Mejor eficiencia:</strong> Menor corriente en vacío y resistencia MOSFET superior (1,2mΩ)',
+                adv_6: '<strong>Arranque más controlado:</strong> 14A de corriente pico frente a 20A+ de la competencia',
+                adv_note: 'Nota: Todas las pruebas realizadas de forma independiente con motor y volante de 3000Kv idénticos. Los resultados demuestran un rendimiento superior consistente en múltiples métricas.',
+                sec_motor: 'Motor 22.000Kv',
+                motor_intro: 'Suministro limitado de motores sin escobillas altamente competitivos. Utilizados con éxito por corredores reconocidos en eventos de eurosport y club sin límites.',
+                motor_install: '<strong>Nota de Instalación:</strong> Requiere instalación cuidadosa - use una herramienta rotativa para quitar el circlip o añadir separadores. ¡Contáctenos para ideas de mejora!',
+                btn_ordermotors: 'Pedir Motores',
+                sec_order: 'Formulario de Pedido',
+                order_intro: 'Rellene el formulario a continuación para generar su pedido. Puede descargarlo como archivo de texto y enviarlo por correo electrónico a',
+                lbl_fullname: 'Nombre Completo *', lbl_email: 'Correo Electrónico *', lbl_phone: 'Número de Teléfono *',
+                lbl_country: 'País de Envío *', opt_selectcountry: 'Seleccione país',
+                lbl_shipping: 'Preferencia de Envío *', opt_selectshipping: 'Seleccione método de envío',
+                ship_special: 'Entrega Especial', ship_first: 'Primera Clase', ship_second: 'Segunda Clase',
+                ship_tracked: 'Con Seguimiento', ship_signed: 'Con Firma',
+                lbl_tariff: 'Código Arancelario/SA (para declaración aduanera)',
+                tariff_title: 'Acerca de los Códigos Arancelarios',
+                lbl_address: 'Dirección de Envío *',
+                lbl_products: 'Productos *',
+                products_prompt: 'Seleccione los productos que desea pedir:',
+                grp_esc: 'Placas Controladoras de Velocidad', grp_wifi: 'Programador WiFi Link', grp_motor: 'Motor',
+                lbl_notes: 'Notas Adicionales (Opcional)', ph_notes: '¿Alguna solicitud especial o pregunta?',
+                btn_generate: 'Generar Archivo de Pedido',
+                order_success_title: '✓ ¡Archivo de Pedido Generado!',
+                order_success_msg: 'Su pedido ha sido descargado como "AART_Order.txt". Por favor, adjunte este archivo a un correo electrónico y envíelo a',
+                sec_contact: 'Contáctenos', contact_title: 'Envíenos un Mensaje',
+                contact_intro: '¿Tiene alguna pregunta o necesita ayuda? Rellene el formulario a continuación y le responderemos lo antes posible.',
+                lbl_yourname: 'Su Nombre *', lbl_youremail: 'Su Correo Electrónico *',
+                lbl_phone_opt: 'Número de Teléfono', lbl_whatsapp: 'Número de WhatsApp',
+                lbl_message: 'Su Mensaje *', ph_message: '¿Cómo podemos ayudarle?',
+                lbl_attachments: 'Archivos Adjuntos (opcional)',
+                attach_hint: 'Puede adjuntar imágenes, documentos u otros archivos (máx. 10MB en total)',
+                btn_send: 'Enviar Mensaje',
+                contact_success_title: '✓ ¡Mensaje Listo!',
+                contact_success_msg: 'Su mensaje ha sido preparado. Haga clic en el botón de abajo para enviarlo a través de su cliente de correo electrónico.',
+                btn_email_client: 'Abrir Cliente de Correo',
+                contact_other: 'Otras Formas de Contactarnos',
+                contact_email_label: 'Envíenos un correo directamente a:',
+                contact_community: 'Comunidad y Recursos',
+                contact_response: '<strong>Tiempo de Respuesta:</strong> Normalmente respondemos en 24-48 horas. Este es un proyecto de afición, así que tenga paciencia si no respondemos de inmediato.',
+                contact_privacy: '<strong>Privacidad:</strong> No vendemos ni compartimos su información.',
+                footer_copy: '© Adrian & Richard's Technologies'
+            },
+            pt: {
+                nav_home: 'Início', nav_products: 'Produtos', nav_remora: 'Placas Remora',
+                nav_comparison: 'Comparativo', nav_motor: 'Motor AART',
+                nav_order: 'Formulário de Pedido', nav_contact: 'Contato',
+                hero_sub: 'O lar dos Comutadores Eletrônicos Remora (eCom) para motores brushless de slot car e tecnologia de corrida de ponta',
+                hero_cta: 'Explorar Nossos Produtos',
+                sec_products: 'Nossos Produtos',
+                products_intro: 'Projetamos e fabricamos placas controladoras de velocidade de código aberto (eComs) para motores brushless de slot car. Todos os projetos de hardware e informações estão disponíveis em nossa',
+                card_esc_title: 'Placas Controladoras de Velocidade',
+                card_esc_desc: 'Comutadores eletrônicos (eComs) para motores brushless em slot cars. Rápidos, robustos e flexíveis.',
+                esc_li1: 'Remora 1.2 - Placa de dupla face', esc_li2: 'Remora 2 - Placa de face única',
+                esc_li3: 'Remora 1/g - Placa Genesis (apenas MidAmerica)', esc_li4: 'Remora IT - Exclusivo SLOT.IT',
+                card_wifi_title: 'Programador WiFi Link',
+                card_wifi_desc: 'Ferramenta essencial para programar e configurar suas placas Remora.',
+                wifi_li1: 'Programa Remora 1.2 e Remora 2', wifi_li2: 'Configure todos os parâmetros do eCom sem fio',
+                wifi_li3: 'Kit completo ou peças individuais', wifi_li4: 'Um programador serve a todas as placas',
+                card_motor_desc: 'Motores brushless de alto desempenho para corridas competitivas de slot car.',
+                motor_li2: 'Comprovado em corridas eurosport', motor_li3: 'Funciona perfeitamente com Remora 1.2',
+                sec_remora: 'Placas Controladoras de Velocidade Remora',
+                remora_intro: 'Os melhores comutadores eletrônicos (eComs) do mundo.',
+                remora_intro_bold: 'Os mais rápidos, baratos, robustos e flexíveis',
+                remora_intro2: 'controladores de velocidade para motores brushless de slot car.',
+                oss_title: 'Tecnologia de Código Aberto',
+                oss_desc: 'Todos os projetos de hardware são de código aberto. O firmware usa ESCape32 - código excepcional para Controladores Eletrônicos de Velocidade.',
+                btn_github: 'Repositório GitHub', btn_wiki: 'Ver Wiki',
+                sec_comparison: 'Comparativo de Desempenho',
+                comparison_intro: 'Testes independentes comparando o Remora 1 com placas concorrentes. Todos os testes realizados com um motor de 3000Kv em condições idênticas.',
+                tbl_specs: 'Especificações Técnicas', col_spec: 'Especificação',
+                spec_weight: 'Peso', spec_pcbarea: 'Área da PCB', spec_boardtype: 'Tipo de Placa',
+                val_doublesided: 'Dupla face', val_singlesided: 'Face única',
+                spec_thickness: 'Espessura', spec_revpol: 'Proteção contra Polaridade Invertida',
+                spec_autobrake: 'Freio Automático', spec_mosfet: 'Resistência dos MOSFETs de Saída',
+                spec_cap: 'Capacitância',
+                tbl_perf: 'Testes de Desempenho (Motor 3000Kv)', col_metric: 'Métrica de Desempenho',
+                perf_startvolt: 'Tensão de Partida', perf_stopvolt: 'Tensão de Parada',
+                perf_freq: 'Frequência @ 10V', perf_noload: 'Corrente em Vazio',
+                perf_delay: 'Atraso Inicial (Partida)', perf_rotation: 'Tempo até Rotação Correta',
+                perf_peak: 'Corrente de Pico (Partida)', val_nostart: 'Não iniciou',
+                adv_title: 'Principais Vantagens',
+                adv_1: '<strong>O mais leve:</strong> Com apenas 1,51g, o Remora 1 é o controlador mais leve testado',
+                adv_2: '<strong>Menor pegada:</strong> Área de PCB de 380mm² - design mais compacto',
+                adv_3: '<strong>Partida mais rápida:</strong> Atraso inicial de 6ms e 30ms até rotação correta',
+                adv_4: '<strong>Menor tensão de operação:</strong> Parte de forma confiável com apenas 1,5V',
+                adv_5: '<strong>Melhor eficiência:</strong> Menor corrente em vazio e resistência MOSFET superior (1,2mΩ)',
+                adv_6: '<strong>Partida mais controlada:</strong> 14A de corrente de pico vs 20A+ dos concorrentes',
+                adv_note: 'Nota: Todos os testes realizados independentemente com motor e volante de 3000Kv idênticos. Os resultados demonstram desempenho superior consistente em múltiplas métricas.',
+                sec_motor: 'Motor 22.000Kv',
+                motor_intro: 'Fornecimento limitado de motores brushless altamente competitivos. Usados com sucesso por corredores renomados em eventos eurosport e de clube sem limites.',
+                motor_install: '<strong>Nota de Instalação:</strong> Requer instalação cuidadosa - use uma ferramenta rotativa para remover o circlip ou adicionar espaçadores. Entre em contato para ideias de melhoria!',
+                btn_ordermotors: 'Pedir Motores',
+                sec_order: 'Formulário de Pedido',
+                order_intro: 'Preencha o formulário abaixo para gerar seu pedido. Você pode baixá-lo como arquivo de texto e enviá-lo por e-mail para',
+                lbl_fullname: 'Nome Completo *', lbl_email: 'Endereço de E-mail *', lbl_phone: 'Número de Telefone *',
+                lbl_country: 'País de Entrega *', opt_selectcountry: 'Selecione o país',
+                lbl_shipping: 'Preferência de Envio *', opt_selectshipping: 'Selecione o método de envio',
+                ship_special: 'Entrega Especial', ship_first: 'Primeira Classe', ship_second: 'Segunda Classe',
+                ship_tracked: 'Com Rastreamento', ship_signed: 'Com Assinatura',
+                lbl_tariff: 'Código Tarifário/SH (para declaração alfandegária)',
+                tariff_title: 'Sobre os Códigos Tarifários',
+                lbl_address: 'Endereço de Entrega *',
+                lbl_products: 'Produtos *',
+                products_prompt: 'Selecione os produtos que deseja pedir:',
+                grp_esc: 'Placas Controladoras de Velocidade', grp_wifi: 'Programador WiFi Link', grp_motor: 'Motor',
+                lbl_notes: 'Notas Adicionais (Opcional)', ph_notes: 'Alguma solicitação especial ou dúvida?',
+                btn_generate: 'Gerar Arquivo de Pedido',
+                order_success_title: '✓ Arquivo de Pedido Gerado!',
+                order_success_msg: 'Seu pedido foi baixado como "AART_Order.txt". Por favor, anexe este arquivo a um e-mail e envie para',
+                sec_contact: 'Contate-nos', contact_title: 'Envie-nos uma Mensagem',
+                contact_intro: 'Tem alguma dúvida ou precisa de ajuda? Preencha o formulário abaixo e entraremos em contato o mais rápido possível.',
+                lbl_yourname: 'Seu Nome *', lbl_youremail: 'Seu E-mail *',
+                lbl_phone_opt: 'Número de Telefone', lbl_whatsapp: 'Número do WhatsApp',
+                lbl_message: 'Sua Mensagem *', ph_message: 'Como podemos ajudá-lo?',
+                lbl_attachments: 'Anexos (opcional)',
+                attach_hint: 'Você pode anexar imagens, documentos ou outros arquivos (máx. 10MB no total)',
+                btn_send: 'Enviar Mensagem',
+                contact_success_title: '✓ Mensagem Pronta!',
+                contact_success_msg: 'Sua mensagem foi preparada. Clique no botão abaixo para enviá-la pelo seu cliente de e-mail.',
+                btn_email_client: 'Abrir Cliente de E-mail',
+                contact_other: 'Outras Formas de Contato',
+                contact_email_label: 'Envie-nos um e-mail diretamente para:',
+                contact_community: 'Comunidade e Recursos',
+                contact_response: '<strong>Tempo de Resposta:</strong> Normalmente respondemos em 24-48 horas. Este é um projeto de hobby, então tenha paciência se não respondermos imediatamente.',
+                contact_privacy: '<strong>Privacidade:</strong> Não vendemos nem compartilhamos suas informações.',
+                footer_copy: '© Adrian & Richard's Technologies'
+            },
+            de: {
+                nav_home: 'Start', nav_products: 'Produkte', nav_remora: 'Remora-Platinen',
+                nav_comparison: 'Vergleich', nav_motor: 'AART-Motor',
+                nav_order: 'Bestellformular', nav_contact: 'Kontakt',
+                hero_sub: 'Das Zuhause der Remora Elektronischen Kommutatoren (eCom) für bürstenlose Motoren in Slotcars und modernste Renntechnologie',
+                hero_cta: 'Unsere Produkte Entdecken',
+                sec_products: 'Unsere Produkte',
+                products_intro: 'Wir entwickeln und fertigen Open-Source-Drehzahlregler-Platinen (eComs) für bürstenlose Slotcar-Motoren. Alle Hardware-Designs und Informationen sind in unserem verfügbar',
+                card_esc_title: 'Drehzahlregler-Platinen',
+                card_esc_desc: 'Elektronische Kommutatoren (eComs) für bürstenlose Motoren in Slotcars. Schnell, robust und flexibel.',
+                esc_li1: 'Remora 1.2 - Doppelseitige Platine', esc_li2: 'Remora 2 - Einseitige Platine',
+                esc_li3: 'Remora 1/g - Genesis-Platine (nur MidAmerica)', esc_li4: 'Remora IT - SLOT.IT-Exklusiv',
+                card_wifi_title: 'WiFi Link Programmierer',
+                card_wifi_desc: 'Unverzichtbares Werkzeug zum Programmieren und Konfigurieren Ihrer Remora-Platinen.',
+                wifi_li1: 'Programmiert Remora 1.2 und Remora 2', wifi_li2: 'Alle eCom-Parameter kabellos einstellen',
+                wifi_li3: 'Komplettes Kit oder Einzelteile', wifi_li4: 'Ein Programmierer für alle Platinen',
+                card_motor_desc: 'Hochleistungs-Bürstenlosmotoren für kompetitives Slotcar-Rennen.',
+                motor_li2: 'Bewährt im Eurosport-Rennen', motor_li3: 'Funktioniert perfekt mit Remora 1.2',
+                sec_remora: 'Remora Drehzahlregler-Platinen',
+                remora_intro: 'Die besten elektronischen Kommutatoren (eComs) der Welt.',
+                remora_intro_bold: 'Schnellste, günstigste, robusteste und flexibelste',
+                remora_intro2: 'Drehzahlregler für bürstenlose Slotcar-Motoren.',
+                oss_title: 'Open-Source-Technologie',
+                oss_desc: 'Alle Hardware-Designs sind Open Source. Die Firmware verwendet ESCape32 - außergewöhnlicher Code für elektronische Drehzahlregler.',
+                btn_github: 'GitHub-Repository', btn_wiki: 'Wiki ansehen',
+                sec_comparison: 'Leistungsvergleich',
+                comparison_intro: 'Unabhängige Tests zum Vergleich von Remora 1 mit konkurrierenden Drehzahlregler-Platinen. Alle Tests mit einem 3000Kv-Motor unter identischen Bedingungen durchgeführt.',
+                tbl_specs: 'Technische Daten', col_spec: 'Spezifikation',
+                spec_weight: 'Gewicht', spec_pcbarea: 'Platinenfläche', spec_boardtype: 'Platinentyp',
+                val_doublesided: 'Doppelseitig', val_singlesided: 'Einseitig',
+                spec_thickness: 'Dicke', spec_revpol: 'Verpolungsschutz',
+                spec_autobrake: 'Automatische Bremse', spec_mosfet: 'Ausgangstransistorwiderstand',
+                spec_cap: 'Kapazität',
+                tbl_perf: 'Leistungstests (3000Kv-Motor)', col_metric: 'Leistungskennwert',
+                perf_startvolt: 'Startspannung', perf_stopvolt: 'Stoppspannung',
+                perf_freq: 'Frequenz @ 10V', perf_noload: 'Leerlaufstrom',
+                perf_delay: 'Anfangsverzögerung (Start)', perf_rotation: 'Zeit bis zur korrekten Rotation',
+                perf_peak: 'Spitzenstrom (Start)', val_nostart: 'Startete nicht',
+                adv_title: 'Hauptvorteile',
+                adv_1: '<strong>Leichteste:</strong> Mit nur 1,51g ist der Remora 1 der leichteste getestete Regler',
+                adv_2: '<strong>Kleinste Fläche:</strong> 380mm² Platinenfläche - kompaktestes Design',
+                adv_3: '<strong>Schnellster Start:</strong> 6ms Anfangsverzögerung und 30ms bis zur korrekten Rotation',
+                adv_4: '<strong>Niedrigste Betriebsspannung:</strong> Startet zuverlässig bei nur 1,5V',
+                adv_5: '<strong>Beste Effizienz:</strong> Geringerer Leerlaufstrom und überlegener MOSFET-Widerstand (1,2mΩ)',
+                adv_6: '<strong>Kontrollierter Start:</strong> 14A Spitzenstrom gegenüber 20A+ der Konkurrenz',
+                adv_note: 'Hinweis: Alle Tests unabhängig mit identischem 3000Kv-Motor und Schwungrad durchgeführt. Ergebnisse zeigen durchgehend überlegene Leistung in mehreren Kennwerten.',
+                sec_motor: '22.000Kv-Motor',
+                motor_intro: 'Begrenztes Angebot an hochkompetitiven bürstenlosen Motoren. Erfolgreich von bekannten Fahrern bei Eurosport- und uneingeschränkten Club-Rennen eingesetzt.',
+                motor_install: '<strong>Installationshinweis:</strong> Erfordert sorgfältige Installation - verwenden Sie ein Schleifwerkzeug, um den Sicherungsring zu entfernen oder Abstandshalter hinzuzufügen. Kontaktieren Sie uns für Verbesserungsideen!',
+                btn_ordermotors: 'Motoren Bestellen',
+                sec_order: 'Bestellformular',
+                order_intro: 'Füllen Sie das nachstehende Formular aus, um Ihre Bestellung zu erstellen. Sie können es als Textdatei herunterladen und per E-Mail an uns senden an',
+                lbl_fullname: 'Vollständiger Name *', lbl_email: 'E-Mail-Adresse *', lbl_phone: 'Telefonnummer *',
+                lbl_country: 'Lieferland *', opt_selectcountry: 'Land auswählen',
+                lbl_shipping: 'Versandpräferenz *', opt_selectshipping: 'Versandart auswählen',
+                ship_special: 'Expresslieferung', ship_first: 'Erste Klasse', ship_second: 'Zweite Klasse',
+                ship_tracked: 'Mit Sendungsverfolgung', ship_signed: 'Mit Unterschrift',
+                lbl_tariff: 'Zolltarifnummer/HS-Code (für Zollanmeldung)',
+                tariff_title: 'Über Zolltarifnummern',
+                lbl_address: 'Lieferadresse *',
+                lbl_products: 'Produkte *',
+                products_prompt: 'Wählen Sie die Produkte aus, die Sie bestellen möchten:',
+                grp_esc: 'Drehzahlregler-Platinen', grp_wifi: 'WiFi Link Programmierer', grp_motor: 'Motor',
+                lbl_notes: 'Zusätzliche Hinweise (Optional)', ph_notes: 'Besondere Wünsche oder Fragen?',
+                btn_generate: 'Bestelldatei Erstellen',
+                order_success_title: '✓ Bestelldatei erstellt!',
+                order_success_msg: 'Ihre Bestellung wurde als "AART_Order.txt" heruntergeladen. Bitte hängen Sie diese Datei an eine E-Mail und senden Sie sie an',
+                sec_contact: 'Kontakt', contact_title: 'Senden Sie uns eine Nachricht',
+                contact_intro: 'Haben Sie eine Frage oder benötigen Sie Hilfe? Füllen Sie das nachstehende Formular aus und wir melden uns so bald wie möglich.',
+                lbl_yourname: 'Ihr Name *', lbl_youremail: 'Ihre E-Mail *',
+                lbl_phone_opt: 'Telefonnummer', lbl_whatsapp: 'WhatsApp-Nummer',
+                lbl_message: 'Ihre Nachricht *', ph_message: 'Wie können wir Ihnen helfen?',
+                lbl_attachments: 'Anhänge (optional)',
+                attach_hint: 'Sie können Bilder, Dokumente oder andere Dateien anhängen (max. 10MB insgesamt)',
+                btn_send: 'Nachricht Senden',
+                contact_success_title: '✓ Nachricht bereit!',
+                contact_success_msg: 'Ihre Nachricht wurde vorbereitet. Klicken Sie auf den Button unten, um sie über Ihren E-Mail-Client zu senden.',
+                btn_email_client: 'E-Mail-Client öffnen',
+                contact_other: 'Andere Kontaktmöglichkeiten',
+                contact_email_label: 'Schreiben Sie uns direkt an:',
+                contact_community: 'Community & Ressourcen',
+                contact_response: '<strong>Antwortzeit:</strong> Wir antworten normalerweise innerhalb von 24-48 Stunden. Dies ist ein Hobbyprojekt, bitte haben Sie Geduld, wenn wir nicht sofort antworten.',
+                contact_privacy: '<strong>Datenschutz:</strong> Wir verkaufen oder teilen Ihre Daten nicht.',
+                footer_copy: '© Adrian & Richard's Technologies'
+            },
+            it: {
+                nav_home: 'Home', nav_products: 'Prodotti', nav_remora: 'Schede Remora',
+                nav_comparison: 'Confronto', nav_motor: 'Motore AART',
+                nav_order: 'Modulo Ordine', nav_contact: 'Contatti',
+                hero_sub: 'La casa dei Commutatori Elettronici Remora (eCom) per motori brushless di slot car e tecnologia di gara all'avanguardia',
+                hero_cta: 'Esplora i Nostri Prodotti',
+                sec_products: 'I Nostri Prodotti',
+                products_intro: 'Progettiamo e produciamo schede di controllo velocità open source (eCom) per motori brushless di slot car. Tutti i progetti hardware e le informazioni sono disponibili sul nostro',
+                card_esc_title: 'Schede Regolatori di Velocità',
+                card_esc_desc: 'Commutatori elettronici (eCom) per motori brushless in slot car. Veloci, robusti e flessibili.',
+                esc_li1: 'Remora 1.2 - Scheda doppia faccia', esc_li2: 'Remora 2 - Scheda singola faccia',
+                esc_li3: 'Remora 1/g - Scheda Genesis (solo MidAmerica)', esc_li4: 'Remora IT - Esclusiva SLOT.IT',
+                card_wifi_title: 'Programmatore WiFi Link',
+                card_wifi_desc: 'Strumento essenziale per programmare e configurare le schede Remora.',
+                wifi_li1: 'Programma Remora 1.2 e Remora 2', wifi_li2: 'Imposta tutti i parametri eCom in modalità wireless',
+                wifi_li3: 'Kit completo o parti singole', wifi_li4: 'Un programmatore per tutte le schede',
+                card_motor_desc: 'Motori brushless ad alte prestazioni per corse competitive di slot car.',
+                motor_li2: 'Collaudato nelle gare eurosport', motor_li3: 'Funziona perfettamente con Remora 1.2',
+                sec_remora: 'Schede Remora Regolatori di Velocità',
+                remora_intro: 'I migliori commutatori elettronici (eCom) al mondo.',
+                remora_intro_bold: 'I più veloci, economici, robusti e flessibili',
+                remora_intro2: 'regolatori di velocità per motori brushless di slot car.',
+                oss_title: 'Tecnologia Open Source',
+                oss_desc: 'Tutti i progetti hardware sono open source. Il firmware utilizza ESCape32 - codice eccezionale per regolatori elettronici di velocità.',
+                btn_github: 'Repository GitHub', btn_wiki: 'Vedi Wiki',
+                sec_comparison: 'Confronto Prestazioni',
+                comparison_intro: 'Test indipendenti che confrontano Remora 1 con schede concorrenti. Tutti i test eseguiti con un motore da 3000Kv in condizioni identiche.',
+                tbl_specs: 'Specifiche Tecniche', col_spec: 'Specifica',
+                spec_weight: 'Peso', spec_pcbarea: 'Area PCB', spec_boardtype: 'Tipo di Scheda',
+                val_doublesided: 'Doppia faccia', val_singlesided: 'Singola faccia',
+                spec_thickness: 'Spessore', spec_revpol: 'Protezione Polarità Inversa',
+                spec_autobrake: 'Freno Automatico', spec_mosfet: 'Resistenza MOSFET di Uscita',
+                spec_cap: 'Capacitanza',
+                tbl_perf: 'Test di Prestazioni (Motore 3000Kv)', col_metric: 'Metrica di Prestazione',
+                perf_startvolt: 'Tensione di Avvio', perf_stopvolt: 'Tensione di Arresto',
+                perf_freq: 'Frequenza @ 10V', perf_noload: 'Corrente a Vuoto',
+                perf_delay: 'Ritardo Iniziale (Avvio)', perf_rotation: 'Tempo alla Rotazione Corretta',
+                perf_peak: 'Corrente di Picco (Avvio)', val_nostart: 'Non si è avviato',
+                adv_title: 'Vantaggi Chiave',
+                adv_1: '<strong>Il più leggero:</strong> Con soli 1,51g, Remora 1 è il regolatore più leggero testato',
+                adv_2: '<strong>Ingombro minore:</strong> Area PCB di 380mm² - design più compatto',
+                adv_3: '<strong>Avvio più rapido:</strong> Ritardo iniziale di 6ms e 30ms alla rotazione corretta',
+                adv_4: '<strong>Tensione operativa più bassa:</strong> Si avvia in modo affidabile a soli 1,5V',
+                adv_5: '<strong>Migliore efficienza:</strong> Corrente a vuoto inferiore e resistenza MOSFET superiore (1,2mΩ)',
+                adv_6: '<strong>Avvio più controllato:</strong> 14A di corrente di picco contro 20A+ dei concorrenti',
+                adv_note: 'Nota: Tutti i test eseguiti indipendentemente con motore e volano da 3000Kv identici. I risultati dimostrano prestazioni superiori costanti su più metriche.',
+                sec_motor: 'Motore 22.000Kv',
+                motor_intro: 'Fornitura limitata di motori brushless altamente competitivi. Utilizzati con successo da piloti rinomati in eventi eurosport e di club senza limiti.',
+                motor_install: '<strong>Nota di Installazione:</strong> Richiede un'installazione attenta - usa un utensile rotante per rimuovere il circlip o aggiungere distanziali. Contattaci per idee di miglioramento!',
+                btn_ordermotors: 'Ordina Motori',
+                sec_order: 'Modulo Ordine',
+                order_intro: 'Compila il modulo sottostante per generare il tuo ordine. Puoi scaricarlo come file di testo e inviarcelo via e-mail a',
+                lbl_fullname: 'Nome Completo *', lbl_email: 'Indirizzo E-mail *', lbl_phone: 'Numero di Telefono *',
+                lbl_country: 'Paese di Spedizione *', opt_selectcountry: 'Seleziona paese',
+                lbl_shipping: 'Preferenza di Spedizione *', opt_selectshipping: 'Seleziona metodo di spedizione',
+                ship_special: 'Consegna Speciale', ship_first: 'Prima Classe', ship_second: 'Seconda Classe',
+                ship_tracked: 'Con Tracciamento', ship_signed: 'Con Firma',
+                lbl_tariff: 'Codice Tariffario/HS (per dichiarazione doganale)',
+                tariff_title: 'Informazioni sui Codici Tariffari',
+                lbl_address: 'Indirizzo di Spedizione *',
+                lbl_products: 'Prodotti *',
+                products_prompt: 'Seleziona i prodotti che desideri ordinare:',
+                grp_esc: 'Schede Regolatori di Velocità', grp_wifi: 'Programmatore WiFi Link', grp_motor: 'Motore',
+                lbl_notes: 'Note Aggiuntive (Facoltativo)', ph_notes: 'Richieste speciali o domande?',
+                btn_generate: 'Genera File Ordine',
+                order_success_title: '✓ File Ordine Generato!',
+                order_success_msg: 'Il tuo ordine è stato scaricato come "AART_Order.txt". Allega questo file a un'e-mail e invialo a',
+                sec_contact: 'Contattaci', contact_title: 'Inviaci un Messaggio',
+                contact_intro: 'Hai una domanda o hai bisogno di assistenza? Compila il modulo sottostante e ti risponderemo il prima possibile.',
+                lbl_yourname: 'Il Tuo Nome *', lbl_youremail: 'La Tua E-mail *',
+                lbl_phone_opt: 'Numero di Telefono', lbl_whatsapp: 'Numero WhatsApp',
+                lbl_message: 'Il Tuo Messaggio *', ph_message: 'Come possiamo aiutarti?',
+                lbl_attachments: 'Allegati (facoltativo)',
+                attach_hint: 'Puoi allegare immagini, documenti o altri file (max 10MB totali)',
+                btn_send: 'Invia Messaggio',
+                contact_success_title: '✓ Messaggio Pronto!',
+                contact_success_msg: 'Il tuo messaggio è stato preparato. Clicca il pulsante sottostante per inviarlo tramite il tuo client e-mail.',
+                btn_email_client: 'Apri Client E-mail',
+                contact_other: 'Altri Modi per Contattarci',
+                contact_email_label: 'Scrivici direttamente a:',
+                contact_community: 'Comunità e Risorse',
+                contact_response: '<strong>Tempi di Risposta:</strong> Rispondiamo tipicamente entro 24-48 ore. Questo è un progetto hobbystico, quindi sii paziente se non rispondiamo immediatamente.',
+                contact_privacy: '<strong>Privacy:</strong> Non vendiamo né condividiamo le tue informazioni.',
+                footer_copy: '© Adrian & Richard's Technologies'
+            }
+        };
+
+        var currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            var t = translations[lang];
+            if (!t) return;
+
+            // Update all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) {
+                    el.innerHTML = t[key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n-placeholder');
+                if (t[key] !== undefined) {
+                    el.setAttribute('placeholder', t[key]);
+                }
+            });
+
+            // Update html lang attribute
+            document.documentElement.setAttribute('lang', lang);
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
     </script>
 </body>
 </html>
