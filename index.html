@@ -1223,26 +1223,9 @@
             <p style="margin-bottom: 2rem;"><span data-i18n="contact_intro">Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</span></p>
             
             <div id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactName" data-i18n="lbl_yourname">Your Name *</label>
-                        <input type="text" id="contactName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail" data-i18n="lbl_youremail">Your Email *</label>
-                        <input type="email" id="contactEmail" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactPhone" data-i18n="lbl_phone_opt">Phone Number</label>
-                        <input type="tel" id="contactPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactWhatsApp" data-i18n="lbl_whatsapp">WhatsApp Number</label>
-                        <input type="tel" id="contactWhatsApp" placeholder="Include country code (e.g., +44 7700 900000)">
-                    </div>
+                <div class="form-group">
+                    <label for="contactName" data-i18n="lbl_yourname">Your Name *</label>
+                    <input type="text" id="contactName" required>
                 </div>
 
                 <div class="form-group">
@@ -1620,23 +1603,17 @@
 
         function sendContactMessage() {
             var name = document.getElementById('contactName').value;
-            var email = document.getElementById('contactEmail').value;
-            var phone = document.getElementById('contactPhone').value;
-            var whatsapp = document.getElementById('contactWhatsApp').value;
             var message = document.getElementById('contactMessage').value;
             var attachments = document.getElementById('contactAttachments').files;
 
-            if (!name || !email || !message) {
-                alert('Please fill in your name, email, and message');
+            if (!name || !message) {
+                alert('Please fill in your name and message');
                 return;
             }
 
             var emailBody = 'CONTACT MESSAGE FROM AART.DEV\n';
             emailBody += '================================\n\n';
             emailBody += 'From: ' + name + '\n';
-            emailBody += 'Email: ' + email + '\n';
-            if (phone) emailBody += 'Phone: ' + phone + '\n';
-            if (whatsapp) emailBody += 'WhatsApp: ' + whatsapp + '\n';
             emailBody += '\n--- MESSAGE ---\n\n';
             emailBody += message + '\n\n';
             
@@ -1727,8 +1704,7 @@
                 order_success_msg: 'Your order has been downloaded as "AART_Order.txt". Please attach this file to an email and send it to',
                 sec_contact: 'Contact Us', contact_title: 'Send Us a Message',
                 contact_intro: "Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.",
-                lbl_yourname: 'Your Name *', lbl_youremail: 'Your Email *',
-                lbl_phone_opt: 'Phone Number', lbl_whatsapp: 'WhatsApp Number',
+                lbl_yourname: 'Your Name *',
                 lbl_message: 'Your Message *', ph_message: 'How can we help you?',
                 lbl_attachments: 'Attachments (optional)',
                 attach_hint: 'You can attach images, documents, or other files (max 10MB total)',
@@ -1812,8 +1788,7 @@
                 order_success_msg: 'Su pedido ha sido descargado como "AART_Order.txt". Por favor, adjunte este archivo a un correo electrónico y envíelo a',
                 sec_contact: 'Contáctenos', contact_title: 'Envíenos un Mensaje',
                 contact_intro: '¿Tiene alguna pregunta o necesita ayuda? Rellene el formulario a continuación y le responderemos lo antes posible.',
-                lbl_yourname: 'Su Nombre *', lbl_youremail: 'Su Correo Electrónico *',
-                lbl_phone_opt: 'Número de Teléfono', lbl_whatsapp: 'Número de WhatsApp',
+                lbl_yourname: 'Su Nombre *',
                 lbl_message: 'Su Mensaje *', ph_message: '¿Cómo podemos ayudarle?',
                 lbl_attachments: 'Archivos Adjuntos (opcional)',
                 attach_hint: 'Puede adjuntar imágenes, documentos u otros archivos (máx. 10MB en total)',
@@ -1897,8 +1872,7 @@
                 order_success_msg: 'Seu pedido foi baixado como "AART_Order.txt". Por favor, anexe este arquivo a um e-mail e envie para',
                 sec_contact: 'Contate-nos', contact_title: 'Envie-nos uma Mensagem',
                 contact_intro: 'Tem alguma dúvida ou precisa de ajuda? Preencha o formulário abaixo e entraremos em contato o mais rápido possível.',
-                lbl_yourname: 'Seu Nome *', lbl_youremail: 'Seu E-mail *',
-                lbl_phone_opt: 'Número de Telefone', lbl_whatsapp: 'Número do WhatsApp',
+                lbl_yourname: 'Seu Nome *',
                 lbl_message: 'Sua Mensagem *', ph_message: 'Como podemos ajudá-lo?',
                 lbl_attachments: 'Anexos (opcional)',
                 attach_hint: 'Você pode anexar imagens, documentos ou outros arquivos (máx. 10MB no total)',
@@ -1982,8 +1956,7 @@
                 order_success_msg: 'Ihre Bestellung wurde als "AART_Order.txt" heruntergeladen. Bitte hängen Sie diese Datei an eine E-Mail und senden Sie sie an',
                 sec_contact: 'Kontakt', contact_title: 'Senden Sie uns eine Nachricht',
                 contact_intro: 'Haben Sie eine Frage oder benötigen Sie Hilfe? Füllen Sie das nachstehende Formular aus und wir melden uns so bald wie möglich.',
-                lbl_yourname: 'Ihr Name *', lbl_youremail: 'Ihre E-Mail *',
-                lbl_phone_opt: 'Telefonnummer', lbl_whatsapp: 'WhatsApp-Nummer',
+                lbl_yourname: 'Ihr Name *',
                 lbl_message: 'Ihre Nachricht *', ph_message: 'Wie können wir Ihnen helfen?',
                 lbl_attachments: 'Anhänge (optional)',
                 attach_hint: 'Sie können Bilder, Dokumente oder andere Dateien anhängen (max. 10MB insgesamt)',
@@ -2067,8 +2040,7 @@
                 order_success_msg: 'Il tuo ordine è stato scaricato come "AART_Order.txt". Allega questo file a un\'e-mail e invialo a',
                 sec_contact: 'Contattaci', contact_title: 'Inviaci un Messaggio',
                 contact_intro: 'Hai una domanda o hai bisogno di assistenza? Compila il modulo sottostante e ti risponderemo il prima possibile.',
-                lbl_yourname: 'Il Tuo Nome *', lbl_youremail: 'La Tua E-mail *',
-                lbl_phone_opt: 'Numero di Telefono', lbl_whatsapp: 'Numero WhatsApp',
+                lbl_yourname: 'Il Tuo Nome *',
                 lbl_message: 'Il Tuo Messaggio *', ph_message: 'Come possiamo aiutarti?',
                 lbl_attachments: 'Allegati (facoltativo)',
                 attach_hint: 'Puoi allegare immagini, documenti o altri file (max 10MB totali)',
